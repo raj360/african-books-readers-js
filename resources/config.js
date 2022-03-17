@@ -11,6 +11,4 @@ const getApiUrl = () => {
 export default {
   apiUrl: getApiUrl(),
   mode: Config.MODE,
-  applicationId: 'jobversation',
-  mixpanel: '047c398aab68393a2668071eea5bc7a0',
 };
