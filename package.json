@@ -1,8 +1,9 @@
 {
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "react-native start",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject"
   },
@@ -29,8 +30,7 @@
     "react-native-web": "0.17.1",
     "react-redux": "7.2.2",
     "redux": "4.0.5",
-    "redux-thunk": "2.3.0",
-    "expo-splash-screen": "~0.14.1"
+    "redux-thunk": "2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -47,7 +47,5 @@
     "react-test-renderer": "16.13.1",
     "source-map": "0.7.3"
   },
-  "private": true,
-  "name": "african-book-app",
-  "version": "1.0.0"
+  "private": true
 }
