@@ -8,6 +8,7 @@ const size = {
   great: 56,
   huge: 46,
   big: 40,
+  large: 36,
   h1: 32,
   h2: 28,
   price: 24,
@@ -30,6 +31,7 @@ const weight = {
 const lineHeight = {
   huge: 58,
   big: 40,
+  large: 36,
   medium: 32,
   regular: 24,
   small: 20,
