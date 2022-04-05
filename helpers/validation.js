@@ -8,22 +8,22 @@ export const VALIDATION_ERRORS = {
   COUNTRY: 'Please select Country of Residence',
 };
 
-export const validateEmail = (email) => {
+export const validateEmail = (email: any) => {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 };
 
-export const formatePhoneNumber = (phoneNumber) => {
+export const formatePhoneNumber = (phoneNumber: string) => {
   return phoneNumber.replace(/[^0-9+]/g, '');
 };
 
-export const validateOnlyNumbers = (value) => {
+export const validateOnlyNumbers = (value: string) => {
   const regex = /^[0-9 +()-]+$/g;
   return regex.test(value);
 };
 
-export const validatePhoneNumber = (phoneNumber) => {
+export const validatePhoneNumber = (phoneNumber: string[]) => {
   let phoneNumberWithPlus = phoneNumber;
   if (phoneNumber[0] !== '+') {
     phoneNumberWithPlus = `+${phoneNumber}`;
@@ -46,37 +46,37 @@ export const validatePhoneNumber = (phoneNumber) => {
   return false;
 };
 
-const AmexCardnumber = (cardNumber) => {
+const AmexCardnumber = (cardNumber: string) => {
   const re = /^(?:3[47][0-9]{13})$/;
   return re.test(cardNumber);
 };
 
-const VisaCardnumber = (cardNumber) => {
+const VisaCardnumber = (cardNumber: string) => {
   const re = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
   return re.test(cardNumber);
 };
 
-const MasterCardnumber = (cardNumber) => {
+const MasterCardnumber = (cardNumber: string) => {
   const re = /^(?:5[1-5][0-9]{14})$/;
   return re.test(cardNumber);
 };
 
-const DiscoverCardnumber = (cardNumber) => {
+const DiscoverCardnumber = (cardNumber: string) => {
   const re = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
   return re.test(cardNumber);
 };
 
-const DinerClubCardnumber = (cardNumber) => {
+const DinerClubCardnumber = (cardNumber: string) => {
   const re = /^(?:3(?:0[0-5]|[68][0-9])[0-9]{11})$/;
   return re.test(cardNumber);
 };
 
-const JCBCardnumber = (cardNumber) => {
+const JCBCardnumber = (cardNumber: string) => {
   const re = /^(?:(?:2131|1800|35\d{3})\d{11})$/;
   return re.test(cardNumber);
 };
 
-export const validateCardNumber = (cardNumber) => {
+export const validateCardNumber = (cardNumber: any) => {
   if (
     AmexCardnumber(cardNumber) ||
     VisaCardnumber(cardNumber) ||
@@ -90,7 +90,7 @@ export const validateCardNumber = (cardNumber) => {
   return false;
 };
 
-export const validateExpiryDate = (expiryDate) => {
+export const validateExpiryDate = (expiryDate: string) => {
   const check = moment(moment(), 'YYYY/MM/DD');
   const month = check.format('M');
   const year = check.format('YY');
@@ -104,7 +104,7 @@ export const validateExpiryDate = (expiryDate) => {
   return re.test(expiryDate);
 };
 
-export const validateCVV = (cvv) => {
+export const validateCVV = (cvv: string) => {
   const re = /^\d{3,4}$/;
   return re.test(cvv);
 };
