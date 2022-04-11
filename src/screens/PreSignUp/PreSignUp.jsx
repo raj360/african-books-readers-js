@@ -18,7 +18,7 @@ function PreSignUp() {
   };
 
   return (
-    <ImageBackground source={''} style={styles.container} fadeDuration={300}>
+    <ImageBackground source={null} style={styles.container} fadeDuration={300}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <LinearGradient
         colors={[

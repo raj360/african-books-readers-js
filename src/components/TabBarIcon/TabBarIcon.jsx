@@ -6,8 +6,8 @@ import colors from 'themes/colors';
 function TabBarIcon({ icon: Icon, focused, fill, stroke }) {
   return (
     <Icon
-      fill={fill ? fill : focused ? colors.tabBarActive : colors.tabBarInactive}
-      stroke={stroke ? stroke : null}
+      fill={fill || (focused ? colors.tabBarActive : colors.tabBarInactive)}
+      stroke={stroke || null}
       style={{
         color: focused ? colors.tabBarActive : colors.tabBarInactive,
       }}

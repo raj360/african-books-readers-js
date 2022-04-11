@@ -15,11 +15,12 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           ...FontAwesome.font,
-          'montserrat': require('../assets/fonts/Montserrat-Regular.ttf'),
-          'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
+          montserrat: require('assets/fonts/Montserrat-Regular.ttf'),
+          'space-mono': require('assets/fonts/SpaceMono-Regular.ttf'),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
+        // eslint-disable-next-line no-console
         console.warn(e);
       } finally {
         setLoadingComplete(true);

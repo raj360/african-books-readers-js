@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import 'react-native-gesture-handler';

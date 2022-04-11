@@ -1,6 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { useDispatch } from 'react-redux';
 import {
   StatusBar,
   Text,
@@ -22,7 +21,6 @@ import styles from './LogInApp.styles';
 
 function LogInApp({ route }) {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
 
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -35,9 +33,8 @@ function LogInApp({ route }) {
     navigation.goBack();
   }, [navigation]);
 
-
   return (
-    <ImageBackground source={require('assets/images/external-home.png')} style={styles.background}>
+    <ImageBackground source={null} style={styles.background}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <BlurView
         style={styles.absolute}
@@ -58,8 +55,6 @@ function LogInApp({ route }) {
               </TouchableOpacity>
             }
           />
-        
-          </View>
         </View>
       </DismissKeyboard>
     </ImageBackground>

@@ -31,16 +31,16 @@ function Browse() {
       <Header
         left={
           <TouchableOpacity
-            style={{ padding: 10, paddingLeft: 0 }}
-            activeOpacity={0.7}
+            // style={{ padding: 10, paddingLeft: 0 }}
+            // activeOpacity={0.7}
             onPress={onBackNavigation}
           >
-            <BackArrowIcon fill={colors.defaultBlack} />
+            <BackArrowIcon />
           </TouchableOpacity>
         }
         right={
           <TouchableOpacity activeOpacity={0.7}>
-            <MenuVerticleIcon fill={colors.defaultBlack} />
+            {/* <MenuVerticleIcon fill={colors.defaultBlack} /> */}
           </TouchableOpacity>
         }
         title="Browse"

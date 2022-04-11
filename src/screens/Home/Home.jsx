@@ -10,15 +10,14 @@ import {
   StatusBar,
   AppState,
 } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { CircleSnail } from 'react-native-progress';
-import analytics from '@react-native-firebase/analytics';
+// import analytics from '@react-native-firebase/analytics';
 
 import Header from 'components/Header';
 import colors from 'themes/colors';
-import styles from './Home.styles';
 import useInterval from 'helpers/useInterval';
+import styles from './Home.styles';
 
 function Home({ route }) {
   const appState = useRef(AppState.currentState);
@@ -27,17 +26,6 @@ function Home({ route }) {
   const [pageLoading, setPageLoading] = useState(true);
 
   const navigation = useNavigation();
-  const dispatch = useDispatch();
-
-  const onRefresh = useCallback(async () => {
-    setIsRefreshing(true);
-    setIsTransactionsLoading(true);
-
-    useInterval(() => {
-      setIsRefreshing(false);
-      setIsTransactionsLoading(false);
-    }, 1000);
-  }, [dispatch, isSpenderWithoutEmployer]);
 
   if (pageLoading) {
     return (

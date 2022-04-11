@@ -1,6 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { useDispatch } from 'react-redux';
 import { StatusBar, Text, ImageBackground, View, Alert, TouchableOpacity } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
 
@@ -10,7 +9,7 @@ import Button from 'components/Button';
 import Header from 'components/Header';
 import DismissKeyboard from 'components/DismissKeyboard';
 
-import { validatePhoneNumber, formatePhoneNumber } from 'helpers/validation';
+// import { validatePhoneNumber, formatePhoneNumber } from 'helpers/validation';
 
 import styles from './SignUpApp.styles';
 
@@ -24,9 +23,9 @@ function SignUpApp({ route }) {
   const onBackPress = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
-
+  // require('assets/images/external-home.png')
   return (
-    <ImageBackground source={require('assets/images/external-home.png')} style={styles.background}>
+    <ImageBackground source={null} style={styles.background}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <BlurView
         style={styles.absolute}

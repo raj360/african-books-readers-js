@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeIcon from 'assets/icons/tabBar/home.svg';
 import BookIcon from 'assets/icons/tabBar/book.svg';
 import headPhonesIconIcon from 'assets/icons/tabBar/headphones.svg';
@@ -87,7 +87,7 @@ function Tabs() {
         component={BrowseScreens}
         options={{
           tabBarLabel: 'Browse',
-          tabBarIcon: (icon) => <TabBarIcon icon={AccountIcon} focused={icon.focused} />,
+          tabBarIcon: (icon) => <TabBarIcon icon={SearchIcon} focused={icon.focused} />,
         }}
       />
     </Tab.Navigator>
