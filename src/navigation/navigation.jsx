@@ -16,7 +16,6 @@ function AppNavigation() {
   };
 
   const onNavigationStateChange = async () => {
-    const previousRouteName = routeNameRef.current;
     const currentRouteName = navigationRef.current.getCurrentRoute().name;
     routeNameRef.current = currentRouteName;
   };
@@ -27,7 +26,7 @@ function AppNavigation() {
       onReady={onNavigationReady}
       onStateChange={onNavigationStateChange}
     >
-      {userAuthenticated ? <AppScreens /> : <AuthScreens />}
+      {!userAuthenticated ? <AppScreens /> : <AuthScreens />}
     </NavigationContainer>
   );
 }

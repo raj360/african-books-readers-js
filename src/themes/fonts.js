@@ -1,7 +1,7 @@
 const family = {
-  base: 'SourceSansPro-Regular',
-  medium: 'SourceSansPro-SemiBold',
-  bold: 'SourceSansPro-Bold',
+  base: 'Montserrat-Regular',
+  medium: 'Montserrat-Medium',
+  bold: 'Montserrat-Bold',
 };
 
 const size = {
@@ -12,7 +12,8 @@ const size = {
   h1: 32,
   h2: 28,
   price: 24,
-  homePrice: 36,
+  heading: 38,
+  title: 36,
   h3: 22,
   h4: 20,
   medium: 18,

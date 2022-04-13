@@ -21,7 +21,7 @@ function AuthScreens() {
         },
       }}
     >
-      <AuthStack.Screen name="AuthApp" component={AuthApp} />
+      {/* <AuthStack.Screen name="AuthApp" component={AuthApp} /> */}
       <AuthStack.Screen name="PreSignUp" component={PreSignUp} />
       <AuthStack.Screen name="LogInApp" component={LogInApp} />
       <AuthStack.Screen name="SignUpApp" component={SignUpApp} />

@@ -13,7 +13,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   buttonTitle: {
-    fontWeight: fonts.weight.bold,
+    fontWeight: fonts.weight.regular,
     lineHeight: fonts.lineHeight.regular,
     fontSize: fonts.size.regular,
   },
