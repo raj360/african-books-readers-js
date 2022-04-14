@@ -1,18 +1,18 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar, ImageBackground, Image, View, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import Button from 'components/Button';
 import Text from 'components/Text';
-import styles from './PreSignUp.styles';
+import styles from './PreSignUpTwo.styles';
 
-function PreSignUp() {
+function PreSignUpTwo() {
   const navigation = useNavigation();
 
   return (
     <ImageBackground
-      source={require('assets/images/presignup-one.png')}
+      source={require('assets/images/presignup-two.png')}
       style={styles.container}
       fadeDuration={300}
     >
@@ -37,4 +37,4 @@ function PreSignUp() {
   );
 }
 
-export default PreSignUp;
+export default PreSignUpTwo;
