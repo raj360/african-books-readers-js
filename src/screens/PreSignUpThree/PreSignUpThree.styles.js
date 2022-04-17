@@ -23,7 +23,7 @@ export default StyleSheet.create({
   },
   title: {
     paddingLeft: 48,
-    width: 350,
+    width: 320,
     fontSize: fonts.size.title,
     fontWeight: fonts.weight.medium,
     color: colors.main,

@@ -26,7 +26,7 @@ function AppNavigation() {
       onReady={onNavigationReady}
       onStateChange={onNavigationStateChange}
     >
-      {userAuthenticated ? <AppScreens /> : <AuthScreens />}
+      {!userAuthenticated ? <AppScreens /> : <AuthScreens />}
     </NavigationContainer>
   );
 }

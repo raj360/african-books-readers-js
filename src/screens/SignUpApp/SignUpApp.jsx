@@ -21,9 +21,9 @@ function SignUpApp({ route }) {
   const onBackPress = useCallback(() => {
     navigation.goBack();
   }, [navigation]);
-
+  // require('assets/images/external-home.png')
   return (
-    <>
+    <ImageBackground source={null} style={styles.background}>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <BlurView
         style={styles.absolute}
