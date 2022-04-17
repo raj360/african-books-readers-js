@@ -19,13 +19,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "african.readers.com"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#D2232A"
-      }
+      },
+      "package": "african.readers.com"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
