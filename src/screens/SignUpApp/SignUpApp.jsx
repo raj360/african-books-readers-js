@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StatusBar, Text, View, TouchableOpacity } from 'react-native';
+import { StatusBar, Text, ImageBackground, View, Alert, TouchableOpacity } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
 
 import BackArrowIcon from 'assets/icons/chevron-left.svg';
@@ -63,7 +63,7 @@ function SignUpApp({ route }) {
           <Text style={[styles.bottomText, styles.bold]}>Sign In</Text>
         </TouchableOpacity>
       </View>
-    </>
+    </ImageBackground>
   );
 }
 

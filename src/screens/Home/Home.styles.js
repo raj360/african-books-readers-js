@@ -31,25 +31,4 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title: {
-    fontWeight: fonts.weight.bold,
-    fontSize: fonts.size.caption,
-    color: colors.textGray,
-  },
-  author: {
-    fontWeight: fonts.weight.light,
-    fontSize: fonts.size.caption,
-    color: colors.textGray,
-  },
-  reviews: {
-    fontWeight: fonts.weight.light,
-    fontSize: fonts.size.tiny,
-    color: colors.reivews,
-  },
-  rating: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 122,
-    paddingTop: 5,
-  },
 });
