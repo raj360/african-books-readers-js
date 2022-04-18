@@ -1,12 +1,12 @@
 import React from 'react';
 import { Rating } from 'react-native-ratings';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import styles from './ReviewItem.styles';
 
 function Review({ route }) {
   return (
-    <>
+    <TouchableOpacity>
       <View style={styles.container}>
         <Image style={styles.image} source={require('assets/images/presignup-one.png')} />
 
@@ -25,7 +25,7 @@ function Review({ route }) {
           </View>
         </View>
       </View>
-    </>
+    </TouchableOpacity>
   );
 }
 
