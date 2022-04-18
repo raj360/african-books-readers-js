@@ -31,7 +31,7 @@ export default StyleSheet.create({
   },
   text: {
     paddingLeft: 48,
-    width: 267,
+    width: 350,
     color: colors.main,
     marginTop: 33,
     fontSize: fonts.size.medium,
@@ -40,7 +40,7 @@ export default StyleSheet.create({
     color: colors.main,
     fontSize: fonts.size.h4,
     textDecorationLine: 'underline',
-    marginTop: 180,
+    marginTop: 150,
     alignSelf: 'center',
     marginBottom: 36,
   },

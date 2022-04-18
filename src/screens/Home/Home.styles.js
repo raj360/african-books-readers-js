@@ -7,12 +7,12 @@ import colors from 'themes/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.main,
     width: '100%',
   },
   statusBar: {
     paddingTop: getStatusBarHeight(),
-    backgroundColor: colors.primary,
+    backgroundColor: colors.main,
   },
   content: {
     width: '100%',

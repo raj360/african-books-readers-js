@@ -23,14 +23,20 @@ function PreSignUpTwo() {
       >
         <View style={{ flex: 1 }}>
           <Image style={styles.logo} source={require('assets/images/adaptive-icon.png')} />
-          <Text style={styles.title}>Discover books you love</Text>
-          <Text style={styles.text}>Find millions of books from the genres you love </Text>
+          <Text style={styles.title}>From the best authors</Text>
+          <Text style={styles.text}>
+            Only the best and selected authors we present to your satisfaction
+          </Text>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('LogInApp')}>
             <Text style={styles.textButton}>Skip</Text>
           </TouchableOpacity>
 
-          <Button buttonStyles={styles.button} title="Next" />
+          <Button
+            onPress={() => navigation.navigate('PreSignUpThree')}
+            buttonStyles={styles.button}
+            title="Next"
+          />
         </View>
       </LinearGradient>
     </ImageBackground>

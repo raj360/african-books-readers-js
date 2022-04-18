@@ -21,9 +21,11 @@ const size = {
   small: 14,
   caption: 12,
   tiny: 10,
+  smallest: 8,
 };
 
 const weight = {
+  light: '300',
   regular: '400',
   medium: '600',
   bold: '700',

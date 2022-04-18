@@ -8,13 +8,13 @@ export default StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     width: '100%',
-    height: 48,
+    height: 34,
     borderWidth: 1,
-    borderRadius: 4,
-    borderColor: colors.disabledText,
-    paddingHorizontal: 16,
+    borderColor: colors.main,
     marginVertical: 2,
     position: 'relative',
+    borderBottomColor: colors.defaultBlack,
+    fontSize: 20,
   },
   disabled: {
     backgroundColor: colors.disabledBackground,
@@ -22,10 +22,11 @@ export default StyleSheet.create({
     borderColor: colors.disabled,
   },
   inputFocused: {
-    borderColor: colors.primary,
+    borderBottomColor: colors.primary,
   },
   label: {
-    fontSize: fonts.size.regular,
+    fontSize: fonts.size.small,
+    color: colors.label,
   },
   labelFocused: {
     color: colors.primary,

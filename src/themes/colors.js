@@ -17,10 +17,13 @@ const colors = {
   disabledBackground: '#F8F9FA',
   viewCardsText: '#D6D6D6',
   error: '#F44336',
+  label: '#6B7280',
   emptyAsterisks: '#DBDEE0',
   grayBackground: '#F8F8FA',
   red: '#EE0005',
   baseFont: '#8C8C8C',
+  textGray: '#19191D',
+  reivews: '#5E6366',
 
   passcodeInput: '#1C1939',
   activePasscodeInput: '#3EA2E7',
@@ -36,8 +39,8 @@ const colors = {
 
   activateButton: '#E3001C',
 
-  tabBarInactive: '#8B8E98',
-  tabBarActive: '#333333',
+  tabBarInactive: '#787885',
+  tabBarActive: '#D2232A',
 
   helperButton: '#F57137',
   googleButton: '#5C83F0',

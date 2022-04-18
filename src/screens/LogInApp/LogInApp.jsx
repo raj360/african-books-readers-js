@@ -1,32 +1,21 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {
-  StatusBar,
-  Text,
-  ImageBackground,
-  View,
-  Alert,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
+import { StatusBar, Text, View, TouchableOpacity } from 'react-native';
 import { BlurView } from '@react-native-community/blur';
 
 import BackArrowIcon from 'assets/icons/chevron-left.svg';
 import Button from 'components/Button';
 import Header from 'components/Header';
 import DismissKeyboard from 'components/DismissKeyboard';
-import { validatePhoneNumber, formatePhoneNumber } from 'helpers/validation';
+import Input from 'components/Input';
 
 import styles from './LogInApp.styles';
 
 function LogInApp({ route }) {
   const navigation = useNavigation();
 
-  const [inputValue, setInputValue] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-
   const onPressSignUp = useCallback(() => {
-    navigation.navigate('PreSignUp');
+    navigation.navigate('Home');
   }, [navigation]);
 
   const onBackPress = useCallback(() => {
@@ -34,7 +23,7 @@ function LogInApp({ route }) {
   }, [navigation]);
 
   return (
-    <ImageBackground source={null} style={styles.background}>
+    <>
       <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
       <BlurView
         style={styles.absolute}
@@ -55,9 +44,26 @@ function LogInApp({ route }) {
               </TouchableOpacity>
             }
           />
+          <View style={{ paddingHorizontal: 39 }}>
+            <Text style={styles.title}>Welcome Back</Text>
+            <Text style={styles.subTitle}>Sign in to continue</Text>
+
+            <Input containerStyle={styles.input} label="Username" />
+            <Input containerStyle={styles.input} label="Password" />
+
+            <Text style={styles.forgetPassword}>Forgot password?</Text>
+
+            <Button onPress={onPressSignUp} title="Sign In" />
+          </View>
         </View>
       </DismissKeyboard>
-    </ImageBackground>
+      <View style={styles.buttonContainer}>
+        <Text style={styles.bottomText}>Don't have an acount?</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUpApp')}>
+          <Text style={[styles.bottomText, styles.bold]}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
+    </>
   );
 }
 

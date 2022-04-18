@@ -31,7 +31,7 @@ export default StyleSheet.create({
   },
   text: {
     paddingLeft: 48,
-    width: 267,
+    width: 380,
     color: colors.main,
     marginTop: 33,
     fontSize: fonts.size.medium,

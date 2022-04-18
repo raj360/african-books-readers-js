@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeIcon from 'assets/icons/tabBar/home.svg';
 import BookIcon from 'assets/icons/tabBar/book.svg';
-import headPhonesIconIcon from 'assets/icons/tabBar/headphones.svg';
+import headPhonesIcon from 'assets/icons/tabBar/headphones.svg';
 import SearchIcon from 'assets/icons/tabBar/search.svg';
 import HeartIcon from 'assets/icons/tabBar/heart.svg';
 
@@ -105,7 +105,7 @@ function Tabs() {
         options={{
           tabBarLabel: 'audio',
           tabBarIcon: (icon) => (
-            <TabBarIcon icon={headPhonesIconIcon} focused={icon.focused} fill={icon.color} />
+            <TabBarIcon icon={headPhonesIcon} focused={icon.focused} fill={icon.color} />
           ),
         }}
       />
@@ -115,7 +115,7 @@ function Tabs() {
         options={{
           tabBarLabel: 'Favorites',
           tabBarIcon: (icon) => (
-            <TabBarIcon icon={SearchIcon} focused={icon.focused} fill={icon.color} />
+            <TabBarIcon icon={HeartIcon} focused={icon.focused} fill={icon.color} />
           ),
         }}
       />

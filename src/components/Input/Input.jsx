@@ -1,15 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import {
-  TextInput,
-  View,
-  Keyboard,
-  TouchableOpacity,
-  Text as RNText,
-} from 'react-native';
+import { TextInput, View, Keyboard, TouchableOpacity, Text as RNText } from 'react-native';
 import PropTypes from 'prop-types';
-
-import OpenedEyeIcon from 'assets/icons/opened-eye.svg';
-import ClosedEyeIcon from 'assets/icons/closed-eye.svg';
 
 import Text from 'components/Text';
 
@@ -39,7 +30,6 @@ function Input({
   rightIcon,
 }) {
   const [focused, setFocused] = useState(false);
-  const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   const handleFocus = useCallback(() => {
     setFocused(true);
@@ -50,17 +40,12 @@ function Input({
     onBlur();
   }, [onBlur, setFocused]);
 
-  const onChangePasswordVisibility = useCallback(() => {
-    setPasswordVisible(!isPasswordVisible);
-  }, [isPasswordVisible]);
-
   return (
     <View style={containerStyle}>
       <Text
         style={[
           styles.label,
           labelStyle,
-          focused && styles.labelFocused,
           !!errors.length && styles.errorMessage,
           errorStyle,
           disabled && styles.disabled,
@@ -94,27 +79,14 @@ function Input({
               Keyboard.dismiss();
             }
           }}
-          secureTextEntry={isPassword && !isPasswordVisible}
+          secureTextEntry={isPassword}
           blurOnSubmit={false}
           ref={inputRef}
           keyboardType={keyboardType}
           maxLength={maxLength}
           autoCapitalize={autoCapitalize}
         />
-        {isPassword && (
-          <TouchableOpacity
-            onPress={onChangePasswordVisibility}
-            style={styles.passwordIcon}
-            disabled={disabled}
-          >
-            {disabled && <ClosedEyeIcon stroke={colors.disabledText} />}
-            {!disabled && isPasswordVisible && <ClosedEyeIcon />}
-            {!disabled && !isPasswordVisible && <OpenedEyeIcon />}
-          </TouchableOpacity>
-        )}
-        {rightIcon && (
-          <View style={[styles.rightIcon, style]}>{rightIcon}</View>
-        )}
+        {rightIcon && <View style={[styles.rightIcon, style]}>{rightIcon}</View>}
       </View>
       {!!errors.length &&
         errors.map((error) => (

@@ -26,11 +26,15 @@ function PreSignUp() {
           <Text style={styles.title}>Discover books you love</Text>
           <Text style={styles.text}>Find millions of books from the genres you love </Text>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('LogInApp')}>
             <Text style={styles.textButton}>Skip</Text>
           </TouchableOpacity>
 
-          <Button buttonStyles={styles.button} title="Next" />
+          <Button
+            onPress={() => navigation.navigate('PreSignUpTwo')}
+            buttonStyles={styles.button}
+            title="Next"
+          />
         </View>
       </LinearGradient>
     </ImageBackground>
