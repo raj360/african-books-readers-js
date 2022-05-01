@@ -104,9 +104,7 @@ function Tabs() {
         component={BrowseScreens}
         options={{
           tabBarLabel: 'audio',
-          tabBarIcon: (icon) => (
-            <TabBarIcon icon={headPhonesIcon} focused={icon.focused} fill={icon.color} />
-          ),
+          tabBarIcon: (icon) => <TabBarIcon icon={headPhonesIcon} focused={icon.focused} />,
         }}
       />
       <Tab.Screen
