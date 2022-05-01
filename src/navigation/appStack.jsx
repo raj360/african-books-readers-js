@@ -17,8 +17,6 @@ import colors from 'themes/colors';
 import commonStyles from 'themes/commonStyles';
 
 import TabBarIcon from 'components/TabBarIcon';
-import Text from 'components/Text';
-import TabBarLabel from 'components/TabBarLabel';
 
 const AppStack = createStackNavigator();
 const HomeStack = createStackNavigator();
@@ -95,8 +93,7 @@ function Tabs() {
         name="Home"
         component={HomeScreens}
         options={{
-          // tabBarLabel: 'Home',
-          tabBarLabel: () => <Text>Home</Text>,
+          tabBarLabel: 'Home',
           tabBarIcon: (icon) => (
             <TabBarIcon icon={HomeIcon} focused={icon.focused} fill={icon.color} />
           ),
