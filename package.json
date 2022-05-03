@@ -1,8 +1,10 @@
 {
   "scripts": {
     "start": "react-native start",
+    "build:android:debug": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && gradlew assembleDebug",
+    "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator='iPhone 13 Pro'",
     "test": "jest --watchAll"
   },
   "jest": {
