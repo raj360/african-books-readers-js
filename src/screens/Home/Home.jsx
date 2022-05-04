@@ -1,5 +1,4 @@
-import React, { useMemo, useState } from 'react';
-import { Rating } from 'react-native-ratings';
+import React, { useState } from 'react';
 import { ScrollView, View, Platform, StatusBar, SafeAreaView } from 'react-native';
 import { CircleSnail } from 'react-native-progress';
 
