@@ -7,6 +7,7 @@ import BookIcon from 'assets/icons/tabBar/book.svg';
 import headPhonesIcon from 'assets/icons/tabBar/headphones.svg';
 import SearchIcon from 'assets/icons/tabBar/search.svg';
 import HeartIcon from 'assets/icons/tabBar/heart.svg';
+import { RNNDrawer, SideMenuView } from 'react-native-navigation-drawer-extension';
 
 import * as RootNavigation from 'helpers/rootNavigation';
 
@@ -23,7 +24,7 @@ const HomeStack = createStackNavigator();
 const AccountStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function HomeScreens() {
+function HomeScreens({ componentId }) {
   const initialRouteName = 'Home';
 
   return (
@@ -36,7 +37,9 @@ function HomeScreens() {
         },
       }}
     >
-      <HomeStack.Screen name="Home" component={Home} />
+      <HomeStack.Screen name="Home">
+        {(props) => <Home {...props} componentId={componentId} />}
+      </HomeStack.Screen>
     </HomeStack.Navigator>
   );
 }
@@ -56,7 +59,8 @@ function BrowseScreens() {
   );
 }
 
-function Tabs() {
+function Tabs({ componentId }) {
+  console.log('testing props', { componentId });
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -91,14 +95,15 @@ function Tabs() {
       />
       <Tab.Screen
         name="Home"
-        component={HomeScreens}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: (icon) => (
             <TabBarIcon icon={HomeIcon} focused={icon.focused} fill={icon.color} />
           ),
         }}
-      />
+      >
+        {(props) => <HomeScreens {...props} componentId={componentId} />}
+      </Tab.Screen>
       <Tab.Screen
         name="Audio"
         component={BrowseScreens}
@@ -121,7 +126,7 @@ function Tabs() {
   );
 }
 
-function AppScreens() {
+function AppScreens({ componentId }) {
   //   const dispatch = useDispatch();
   //   const user = useSelector(userSelectors.getUserData);
 
@@ -136,7 +141,9 @@ function AppScreens() {
       initialRouteName="AppLoader"
     >
       {/* <TABS> */}
-      <AppStack.Screen name="Tabs" component={Tabs} />
+      <AppStack.Screen name="Tabs">
+        {(props) => <Tabs {...props} componentId={componentId} />}
+      </AppStack.Screen>
       {/* <TABS /> */}
 
       {/* Screens without tabs */}

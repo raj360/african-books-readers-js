@@ -31,4 +31,32 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  mainContainer: {
+    padding: 20,
+    backgroundColor: 'white',
+    alignItems: 'center',
+  },
+
+  headlineText: {
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: '700',
+  },
+
+  buttonContainer: {
+    width: '90%',
+    backgroundColor: '#44475a',
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 20,
+  },
+
+  buttonText: {
+    fontSize: 20,
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: '600',
+    textTransform: 'uppercase',
+    letterSpacing: 1.1,
+  },
 });

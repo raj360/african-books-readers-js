@@ -7,7 +7,7 @@ import config from 'resources/config';
 import AuthScreens from './authStack';
 import AppScreens from './appStack';
 
-function AppNavigation() {
+function AppNavigation(props) {
   const userAuthenticated = true;
 
   const onNavigationReady = () => {
@@ -25,7 +25,7 @@ function AppNavigation() {
       onReady={onNavigationReady}
       onStateChange={onNavigationStateChange}
     >
-      {userAuthenticated ? <AppScreens /> : <AuthScreens />}
+      {userAuthenticated ? <AppScreens {...props} /> : <AuthScreens {...props} />}
     </NavigationContainer>
   );
 }

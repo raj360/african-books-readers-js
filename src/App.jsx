@@ -4,10 +4,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Navigation from 'navigation';
 
-export default function App() {
+export default function App({ componentId }) {
   return (
     <SafeAreaProvider>
-      <Navigation />
+      <Navigation componentId={componentId} />
       <StatusBar />
     </SafeAreaProvider>
   );
