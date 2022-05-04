@@ -3,13 +3,13 @@ package african.readers.com;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.facebook.react.ReactActivity;
+import com.reactnativenavigation.NavigationActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
 import expo.modules.ReactActivityDelegateWrapper;
 
-public class MainActivity extends ReactActivity {
+public class MainActivity extends NavigationActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     // Set the theme to AppTheme BEFORE onCreate to support 
@@ -19,21 +19,14 @@ public class MainActivity extends ReactActivity {
     super.onCreate(null);
   }
 
-  /**
-   * Returns the name of the main component registered from JavaScript.
-   * This is used to schedule rendering of the component.
-   */
-  @Override
-  protected String getMainComponentName() {
-    return "main";
-  }
+  
 
-  @Override
-  protected ReactActivityDelegate createReactActivityDelegate() {
-    return new ReactActivityDelegateWrapper(this,
-      new ReactActivityDelegate(this, getMainComponentName())
-    );
-  }
+  // @Override
+  // protected ReactActivityDelegate createReactActivityDelegate() {
+  //   return new ReactActivityDelegateWrapper(this,
+  //     new ReactActivityDelegate(this, getMainComponentName())
+  //   );
+  // }
 
   /**
    * Align the back button behavior with Android S
