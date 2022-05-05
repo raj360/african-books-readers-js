@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 import fonts from 'themes/fonts';
 import colors from 'themes/colors';
 
@@ -19,13 +19,12 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: colors.defaultBlack,
+    fontSize: fonts.size.medium,
     fontWeight: fonts.weight.bold,
-    fontFamily: fonts.family.bold,
   },
   subText: {
     color: colors.defaultBlack,
-    fontSize: fonts.size.h4,
+    fontSize: fonts.size.medium,
     fontWeight: fonts.weight.light,
-    // fontFamily: fonts.family.base,
   },
 });

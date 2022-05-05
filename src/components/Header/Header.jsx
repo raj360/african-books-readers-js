@@ -13,25 +13,26 @@ const Header = ({
   leftStyle,
   content,
   numberOfLines = 1,
+  isHome = false,
+  center,
 }) => {
   return (
     <View style={[styles.container, containerStyle]}>
-      {content ? (
-        content
-      ) : (
+      {content || (
         <>
           {left ? (
             <View style={[styles.left, leftStyle]}>{left}</View>
           ) : (
-            <View style={[styles.left, leftStyle]}></View>
+            <View style={[styles.left, leftStyle]} />
           )}
           <View style={styles.center}>
-            <Text
-              numberOfLines={numberOfLines}
-              style={[styles.title, titleStyle]}
-            >
-              {title}
-            </Text>
+            {isHome ? (
+              center
+            ) : (
+              <Text numberOfLines={numberOfLines} style={[styles.title, titleStyle]}>
+                {title}
+              </Text>
+            )}
           </View>
           {right && <View style={[styles.right, rightStyle]}>{right}</View>}
         </>

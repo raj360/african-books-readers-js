@@ -1,8 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import fonts from 'themes/fonts';
 import colors from 'themes/colors';
+
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export default StyleSheet.create({
   container: {
@@ -55,8 +57,42 @@ export default StyleSheet.create({
     fontSize: 20,
     color: 'white',
     textAlign: 'center',
-    fontWeight: '600',
+    fontWeight: fonts.weight.medium,
     textTransform: 'uppercase',
     letterSpacing: 1.1,
   },
+  logo: {
+    height: 32,
+    width: 32,
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: colors.main,
+  },
+  headerView: {
+    backgroundColor: colors.backGround,
+    height: 256,
+    paddingHorizontal: 26,
+  },
+  headerCaption: {
+    paddingTop: 30,
+    paddingBottom: 15,
+    fontSize: fonts.size.small,
+    // fontWeight: fonts.weight.bold,
+  },
+  sideImage: {
+    marginLeft: 5,
+    height: 135,
+    width: 147,
+    borderWidth: 1,
+    borderColor: colors.main,
+    alignSelf: 'center',
+    resizeMode: 'contain',
+  },
+  headerViewCard: {
+    flexDirection: 'row',
+    height: 145,
+    backgroundColor: colors.main,
+  },
+  author: {},
+  bookName: { fontSize: fonts.size.medium, fontWeight: fonts.weight.medium },
 });

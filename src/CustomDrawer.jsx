@@ -1,16 +1,18 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View, Image, Dimensions } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Image, Dimensions } from 'react-native';
 import DrawerButton from 'components/DrawerButton';
 import BookReaderIcon from 'assets/icons/book-reader.svg';
 import BrowserIcon from 'assets/icons/browser.svg';
 import ListeningIcon from 'assets/icons/listening.svg';
 import LogOutIcon from 'assets/icons/log-out.svg';
 import SettingsIcon from 'assets/icons/settings.svg';
-
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
+import Text from 'components/Text';
 
 import fonts from 'themes/fonts';
 import colors from 'themes/colors';
+import { TouchableOpacity } from 'react-native-web';
+
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 const styles = StyleSheet.create({
   drawerHeader: {
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     margin: 20,
     textAlign: 'center',
   },
-  fullName: { fontWeight: fonts.weight.medium, paddingTop: 12, fontFamily: fonts.family.medium },
+  fullName: { fontWeight: fonts.weight.bold, paddingTop: 12 },
   emailAddress: { fontWeight: fonts.weight.light },
   logoutView: {
     backgroundColor: colors.lightGray,
@@ -55,8 +57,7 @@ const styles = StyleSheet.create({
   logout: {
     color: colors.gray,
     fontSize: fonts.size.medium,
-    fontWeight: fonts.weight.light,
-    fontFamily: fonts.family.base,
+    fontWeight: fonts.weight.medium,
   },
   icon: { paddingRight: 10, margin: 5 },
 });
@@ -119,7 +120,9 @@ const CustomDrawer = ({ parentComponentId }) => {
           <View style={styles.icon}>
             <LogOutIcon />
           </View>
-          <Text style={styles.logout}>Logout</Text>
+          <TouchableOpacity>
+            <Text style={styles.logout}>Logout</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

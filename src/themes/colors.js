@@ -25,6 +25,8 @@ const colors = {
   textGray: '#19191D',
   reivews: '#5E6366',
 
+  backGround: '#F4F4F4',
+
   transparent: '#F5F6F8',
 
   passcodeInput: '#1C1939',

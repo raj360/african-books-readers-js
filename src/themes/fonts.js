@@ -1,11 +1,3 @@
-import { Platform } from 'react-native';
-
-const family = {
-  base: Platform.OS === 'ios' ? 'Montserrat-Regular' : 'Montserrat-Regular',
-  medium: 'Montserrat-Medium',
-  bold: 'Montserrat-Bold',
-};
-
 const size = {
   great: 56,
   huge: 46,
@@ -25,6 +17,18 @@ const size = {
   tiny: 10,
   smallest: 8,
 };
+
+const family = {
+  base: 'Montserrat-Regular',
+};
+
+// const weight2 = {
+//   thin: 'Montserrat-Thin',
+//   light: 'Montserrat-Light',
+//   regular: 'Montserrat-Regular',
+//   medium: 'Montserrat-Medium',
+//   semiBold: 'Montserrat-SemiBold',
+// };
 
 const weight = {
   thin: '100',

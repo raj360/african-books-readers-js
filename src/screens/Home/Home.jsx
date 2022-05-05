@@ -6,14 +6,17 @@ import {
   StatusBar,
   SafeAreaView,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import { CircleSnail } from 'react-native-progress';
 import { RNNDrawer, SideMenuView } from 'react-native-navigation-drawer-extension';
 import colors from 'themes/colors';
 import ReviewItem from 'components/ReviewItem';
+import Header from 'components/Header';
+import MenuIcon from 'assets/icons/menu.svg';
+import HomeLogoIcon from 'assets/images/home-logo.svg';
 import Text from 'components/Text';
 import styles from './Home.styles';
-import Header from 'components/Header';
 
 function Home({ route, componentId }) {
   const [pageLoading, setPageLoading] = useState(true);
@@ -84,10 +87,34 @@ function Home({ route, componentId }) {
           contentContainerStyle={styles.content}
           showsVerticalScrollIndicator={false}
         >
-          <ReviewItem />
-          <TouchableOpacity onPress={onPress}>
-            <Text>Testing</Text>
-          </TouchableOpacity>
+          <Header
+            left={
+              <TouchableOpacity
+                style={{ padding: 10, paddingLeft: 0 }}
+                activeOpacity={0.7}
+                onPress={onPress}
+              >
+                <MenuIcon />
+              </TouchableOpacity>
+            }
+            center={<HomeLogoIcon />}
+            isHome
+            right={
+              <Image style={styles.logo} source={require('assets/images/presignup-one.png')} />
+            }
+          />
+
+          <View style={styles.headerView}>
+            <Text style={styles.headerCaption}>Continue reading</Text>
+            <View style={styles.headerViewCard}>
+              <Image style={styles.sideImage} source={require('assets/images/thinking-slow.png')} />
+              <View style={{ padding: 5 }}>
+                <Text style={styles.bookName}>Thinking</Text>
+                <Text style={styles.author}>Daniel Kahneman</Text>
+              </View>
+            </View>
+          </View>
+          {/* <ReviewItem /> */}
           {Platform.OS === 'ios' && <View style={styles.iosBottomScrollBackColor} />}
         </ScrollView>
       </SafeAreaView>
