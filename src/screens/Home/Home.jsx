@@ -84,7 +84,7 @@ function Home({ route, componentId }) {
           showsVerticalScrollIndicator={false}
         >
           <ReviewItem />
-          <TouchableOpacity onPress={() => onPress()}>
+          <TouchableOpacity onPress={onPress}>
             <Text>Testing</Text>
           </TouchableOpacity>
           {Platform.OS === 'ios' && <View style={styles.iosBottomScrollBackColor} />}
