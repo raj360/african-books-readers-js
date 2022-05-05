@@ -13,6 +13,7 @@ import colors from 'themes/colors';
 import ReviewItem from 'components/ReviewItem';
 import Text from 'components/Text';
 import styles from './Home.styles';
+import Header from 'components/Header';
 
 function Home({ route, componentId }) {
   const [pageLoading, setPageLoading] = useState(true);
@@ -44,7 +45,7 @@ function Home({ route, componentId }) {
         },
         options: {
           layout: {
-            componentBackgroundColor: 'black',
+            componentBackgroundColor: '#80FFFFFF.',
           },
         },
       },

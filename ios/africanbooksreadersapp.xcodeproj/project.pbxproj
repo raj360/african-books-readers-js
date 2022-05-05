@@ -18,10 +18,12 @@
 		96905EF65AED1B983A6B3ABC /* libPods-africanbooksreadersapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-africanbooksreadersapp.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		DB3FAD0B3D3D480AA401C193 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05565F52955C430D878224DD /* Montserrat.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		05565F52955C430D878224DD /* Montserrat.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Montserrat.ttf; path = ../assets/fonts/Montserrat.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* africanbooksreadersapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = africanbooksreadersapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = africanbooksreadersapp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = africanbooksreadersapp/AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				AA1FFF6F67C94652BE5C9AF8 /* Montserrat-Bold.ttf */,
 				4D2BB37067A6479BA30C0B35 /* Montserrat-Medium.ttf */,
 				CB7DA26103594A20971A0003 /* Montserrat-Regular.ttf */,
+				05565F52955C430D878224DD /* Montserrat.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				0A727EE9BC944D9B9C6B3069 /* Montserrat-Bold.ttf in Resources */,
 				7D9944A04B314FAA82E07970 /* Montserrat-Medium.ttf in Resources */,
 				40B93AC51BAB491B82C7566B /* Montserrat-Regular.ttf in Resources */,
+				DB3FAD0B3D3D480AA401C193 /* Montserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

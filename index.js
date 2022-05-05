@@ -19,6 +19,11 @@ Navigation.events().registerAppLaunchedListener(() => {
           {
             component: {
               name: 'com.myApp.WelcomeScreen',
+              options: {
+                topBar: {
+                  visible: false,
+                },
+              },
             },
           },
         ],

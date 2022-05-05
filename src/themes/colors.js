@@ -7,7 +7,7 @@ const colors = {
   defaultBlack: '#000000',
   darkGray: '#333333',
   gray: '#4D5864',
-  lightGray: '#E5E5E5',
+  lightGray: '#F9F9F9',
   lightBlue: '#F3F9FD',
   lightOrange: '#FFF5EA',
   orange: '#FFA336',
@@ -24,6 +24,8 @@ const colors = {
   baseFont: '#8C8C8C',
   textGray: '#19191D',
   reivews: '#5E6366',
+
+  transparent: '#F5F6F8',
 
   passcodeInput: '#1C1939',
   activePasscodeInput: '#3EA2E7',

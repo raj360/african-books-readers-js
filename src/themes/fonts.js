@@ -1,5 +1,7 @@
+import { Platform } from 'react-native';
+
 const family = {
-  base: 'Montserrat-Regular',
+  base: Platform.OS === 'ios' ? 'Montserrat-Regular' : 'Montserrat-Regular',
   medium: 'Montserrat-Medium',
   bold: 'Montserrat-Bold',
 };
@@ -25,6 +27,7 @@ const size = {
 };
 
 const weight = {
+  thin: '100',
   light: '300',
   regular: '400',
   medium: '600',
