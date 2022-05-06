@@ -131,16 +131,21 @@ function Home({ route, componentId }) {
           contentContainerStyle={styles.content}
           showsVerticalScrollIndicator={false}
         >
-          <View style={styles.headerView}>
-            <Text style={styles.headerCaption}>Continue reading</Text>
-            <View style={styles.headerViewCard}>
-              <Image style={styles.sideImage} source={require('assets/images/thinking-slow.png')} />
-              <View style={{ padding: 5 }}>
-                <Text style={styles.bookName}>Thinking</Text>
-                <Text style={styles.author}>Daniel Kahneman</Text>
+          <TouchableOpacity>
+            <View style={styles.headerView}>
+              <Text style={styles.headerCaption}>Continue reading</Text>
+              <View style={styles.headerViewCard}>
+                <Image
+                  style={styles.sideImage}
+                  source={require('assets/images/thinking-slow.png')}
+                />
+                <View style={{ padding: 5 }}>
+                  <Text style={styles.bookName}>Thinking</Text>
+                  <Text style={styles.author}>Daniel Kahneman</Text>
+                </View>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
 
           <View style={styles.nestedListView}>
             {/* My ebooks */}
