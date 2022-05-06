@@ -1,9 +1,3 @@
-const family = {
-  base: 'Montserrat-Regular',
-  medium: 'Montserrat-Medium',
-  bold: 'Montserrat-Bold',
-};
-
 const size = {
   great: 56,
   huge: 46,
@@ -24,7 +18,17 @@ const size = {
   smallest: 8,
 };
 
+const family = {
+  base: 'Montserrat-Regular',
+  thin: 'Montserrat-Thin',
+  light: 'Montserrat-Light',
+  regular: 'Montserrat-Regular',
+  medium: 'Montserrat-Medium',
+  semiBold: 'Montserrat-SemiBold',
+};
+
 const weight = {
+  thin: '100',
   light: '300',
   regular: '400',
   medium: '600',

@@ -1,8 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import fonts from 'themes/fonts';
 import colors from 'themes/colors';
+
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export default StyleSheet.create({
   container: {
@@ -55,8 +57,100 @@ export default StyleSheet.create({
     fontSize: 20,
     color: 'white',
     textAlign: 'center',
-    fontWeight: '600',
+    fontWeight: fonts.weight.medium,
     textTransform: 'uppercase',
     letterSpacing: 1.1,
+  },
+  logo: {
+    height: 32,
+    width: 32,
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: colors.main,
+  },
+  headerView: {
+    backgroundColor: colors.backGround,
+    height: 230,
+    paddingHorizontal: 26,
+  },
+  headerCaption: {
+    paddingTop: 30,
+    paddingBottom: 15,
+    fontSize: fonts.size.small,
+    fontWeight: fonts.weight.medium,
+    fontFamily: fonts.family.medium,
+  },
+  sideImage: {
+    marginLeft: 5,
+    height: 135,
+    width: 147,
+    borderWidth: 1,
+    borderColor: colors.main,
+    alignSelf: 'center',
+    resizeMode: 'contain',
+  },
+  headerViewCard: {
+    flexDirection: 'row',
+    height: 145,
+    backgroundColor: colors.main,
+    borderRadius: 5,
+  },
+  author: {
+    fontSize: fonts.size.medium,
+    fontWeight: fonts.weight.light,
+    fontFamily: fonts.family.light,
+  },
+  bookName: {
+    fontSize: fonts.size.medium,
+    fontWeight: fonts.weight.bold,
+    fontFamily: fonts.family.bold,
+  },
+  nestedListView: {
+    backgroundColor: colors.main,
+    paddingHorizontal: 26,
+  },
+  viewHeaderContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  viewAllText: {
+    fontSize: fonts.size.small,
+    fontWeight: fonts.weight.regular,
+    fontFamily: fonts.family.regular,
+    color: '#868B97',
+  },
+  viewAllContainer: {
+    flexDirection: 'row',
+    paddingTop: 9,
+    paddingBottom: 15,
+    alignItems: 'flex-end',
+  },
+  bookImage: {
+    height: 148,
+    width: 104,
+    borderWidth: 1,
+    paddingHorizontal: 8,
+    borderColor: colors.main,
+    resizeMode: 'stretch',
+  },
+  authorImage: {
+    height: 58,
+    width: 58,
+    borderRadius: 100,
+    borderWidth: 1,
+    paddingHorizontal: 8,
+    borderColor: colors.main,
+  },
+  authorContainer: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 12,
+  },
+  authorName: {
+    fontSize: fonts.size.tiny,
+    fontWeight: fonts.weight.light,
+    fontFamily: fonts.family.light,
+    width: 54,
+    textAlign: 'center',
   },
 });
