@@ -20,11 +20,13 @@ export default StyleSheet.create({
   buttonText: {
     color: colors.defaultBlack,
     fontSize: fonts.size.medium,
-    fontWeight: fonts.weight.bold,
+    fontWeight: fonts.weight.medium,
+    fontFamily: fonts.family.medium,
   },
   subText: {
     color: colors.defaultBlack,
     fontSize: fonts.size.medium,
+    fontFamily: fonts.family.light,
     fontWeight: fonts.weight.light,
   },
 });

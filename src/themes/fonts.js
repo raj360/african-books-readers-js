@@ -20,15 +20,12 @@ const size = {
 
 const family = {
   base: 'Montserrat-Regular',
+  thin: 'Montserrat-Thin',
+  light: 'Montserrat-Light',
+  regular: 'Montserrat-Regular',
+  medium: 'Montserrat-Medium',
+  semiBold: 'Montserrat-SemiBold',
 };
-
-// const weight2 = {
-//   thin: 'Montserrat-Thin',
-//   light: 'Montserrat-Light',
-//   regular: 'Montserrat-Regular',
-//   medium: 'Montserrat-Medium',
-//   semiBold: 'Montserrat-SemiBold',
-// };
 
 const weight = {
   thin: '100',

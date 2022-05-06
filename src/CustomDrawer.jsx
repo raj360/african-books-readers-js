@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Image, Dimensions } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Image, Dimensions, TouchableOpacity } from 'react-native';
 import DrawerButton from 'components/DrawerButton';
 import BookReaderIcon from 'assets/icons/book-reader.svg';
 import BrowserIcon from 'assets/icons/browser.svg';
@@ -10,7 +10,6 @@ import Text from 'components/Text';
 
 import fonts from 'themes/fonts';
 import colors from 'themes/colors';
-import { TouchableOpacity } from 'react-native-web';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
@@ -43,8 +42,8 @@ const styles = StyleSheet.create({
     margin: 20,
     textAlign: 'center',
   },
-  fullName: { fontWeight: fonts.weight.bold, paddingTop: 12 },
-  emailAddress: { fontWeight: fonts.weight.light },
+  fullName: { fontWeight: fonts.weight.medium, fontFamily: fonts.family.medium, paddingTop: 12 },
+  emailAddress: { fontWeight: fonts.weight.light, fontFamily: fonts.family.light },
   logoutView: {
     backgroundColor: colors.lightGray,
     height: 117,
