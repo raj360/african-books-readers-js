@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,12 +7,12 @@ import BookIcon from 'assets/icons/tabBar/book.svg';
 import headPhonesIcon from 'assets/icons/tabBar/headphones.svg';
 import SearchIcon from 'assets/icons/tabBar/search.svg';
 import HeartIcon from 'assets/icons/tabBar/heart.svg';
-import { RNNDrawer, SideMenuView } from 'react-native-navigation-drawer-extension';
 
 import * as RootNavigation from 'helpers/rootNavigation';
 
 import Home from 'screens/Home';
 import Browse from 'screens/Browse';
+import Ebooks from 'screens/Ebooks';
 
 import colors from 'themes/colors';
 import commonStyles from 'themes/commonStyles';
@@ -58,9 +58,22 @@ function BrowseScreens() {
     </AccountStack.Navigator>
   );
 }
+function EbooksScreens() {
+  return (
+    <AccountStack.Navigator
+      headerMode="none"
+      screenOptions={{
+        cardStyle: {
+          backgroundColor: colors.main,
+        },
+      }}
+    >
+      <AccountStack.Screen name="Ebooks" component={Ebooks} />
+    </AccountStack.Navigator>
+  );
+}
 
 function Tabs({ componentId }) {
-  console.log('testing props', { componentId });
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -85,7 +98,7 @@ function Tabs({ componentId }) {
       />
       <Tab.Screen
         name="eBook"
-        component={BrowseScreens}
+        component={EbooksScreens}
         options={{
           tabBarLabel: 'eBook',
           tabBarIcon: (icon) => (

@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
   logout: {
     color: colors.gray,
     fontSize: fonts.size.medium,
-    fontWeight: fonts.weight.medium,
+    fontWeight: fonts.weight.light,
+    fontFamily: fonts.family.light,
   },
   icon: { paddingRight: 10, margin: 5 },
 });

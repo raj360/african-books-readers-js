@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StatusBar, ImageBackground, Image, View, TouchableOpacity } from 'react-native';
+import { StatusBar, ImageBackground, Image, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import Button from 'components/Button';
