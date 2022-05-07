@@ -4,7 +4,7 @@ import { View, Image, TouchableOpacity } from 'react-native';
 import Text from 'components/Text';
 import styles from './ReviewItem.styles';
 
-function Review({ title, author, rating, reviews, imageUrl }) {
+function Review({ title, author, rating, reviews, imageUrl, isAudio = false }) {
   return (
     <TouchableOpacity>
       <View style={styles.container}>
@@ -17,30 +17,33 @@ function Review({ title, author, rating, reviews, imageUrl }) {
           <Text numberOfLines={1} style={styles.author}>
             {author}
           </Text>
-          <View style={styles.rating} pointerEvents="none">
-            <Rating
-              style={{
-                alignSelf: 'flex-start',
-                paddingTop: 2,
-                paddingRight: 5,
-              }}
-              ratingCount={5}
-              startingValue={rating}
-              imageSize={10}
-            />
-            <View
-              style={{
-                flexDirection: 'row',
-                flex: 1,
-                paddingHorizontal: 7,
-                justifyContent: 'space-between',
-                alignSelf: 'flex-end',
-              }}
-            >
-              <Text style={styles.reviews}>{reviews}</Text>
-              <Text style={styles.reviews}>Reviews</Text>
+
+          {isAudio || (
+            <View style={styles.rating} pointerEvents="none">
+              <Rating
+                style={{
+                  alignSelf: 'flex-start',
+                  paddingTop: 2,
+                  paddingRight: 5,
+                }}
+                ratingCount={5}
+                startingValue={rating}
+                imageSize={10}
+              />
+              <View
+                style={{
+                  flexDirection: 'row',
+                  flex: 1,
+                  paddingHorizontal: 7,
+                  justifyContent: 'space-between',
+                  alignSelf: 'flex-end',
+                }}
+              >
+                <Text style={styles.reviews}>{reviews}</Text>
+                <Text style={styles.reviews}>Reviews</Text>
+              </View>
             </View>
-          </View>
+          )}
         </View>
       </View>
     </TouchableOpacity>

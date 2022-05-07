@@ -8,11 +8,12 @@ import headPhonesIcon from 'assets/icons/tabBar/headphones.svg';
 import SearchIcon from 'assets/icons/tabBar/search.svg';
 import HeartIcon from 'assets/icons/tabBar/heart.svg';
 
-import * as RootNavigation from 'helpers/rootNavigation';
+// import * as RootNavigation from 'helpers/rootNavigation';
 
 import Home from 'screens/Home';
 import Browse from 'screens/Browse';
 import Ebooks from 'screens/Ebooks';
+import Audio from 'screens/Audio';
 
 import colors from 'themes/colors';
 import commonStyles from 'themes/commonStyles';
@@ -58,7 +59,8 @@ function BrowseScreens() {
     </AccountStack.Navigator>
   );
 }
-function EbooksScreens() {
+
+function EbookScreens() {
   return (
     <AccountStack.Navigator
       headerMode="none"
@@ -69,6 +71,20 @@ function EbooksScreens() {
       }}
     >
       <AccountStack.Screen name="Ebooks" component={Ebooks} />
+    </AccountStack.Navigator>
+  );
+}
+function AudioScreens() {
+  return (
+    <AccountStack.Navigator
+      headerMode="none"
+      screenOptions={{
+        cardStyle: {
+          backgroundColor: colors.main,
+        },
+      }}
+    >
+      <AccountStack.Screen name="Audio" component={Audio} />
     </AccountStack.Navigator>
   );
 }
@@ -98,7 +114,7 @@ function Tabs({ componentId }) {
       />
       <Tab.Screen
         name="eBook"
-        component={EbooksScreens}
+        component={EbookScreens}
         options={{
           tabBarLabel: 'eBook',
           tabBarIcon: (icon) => (
@@ -119,7 +135,7 @@ function Tabs({ componentId }) {
       </Tab.Screen>
       <Tab.Screen
         name="Audio"
-        component={BrowseScreens}
+        component={AudioScreens}
         options={{
           tabBarLabel: 'audio',
           tabBarIcon: (icon) => <TabBarIcon icon={headPhonesIcon} focused={icon.focused} />,
