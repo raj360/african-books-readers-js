@@ -34,9 +34,8 @@ export const validatePhoneNumber = (phoneNumber: string[]) => {
     if (formattedPhoneNumber.substr(0, 3) === '+65') {
       if (formattedPhoneNumber.length === 11) {
         return true;
-      } else {
-        return false;
       }
+      return false;
     }
     if (formattedPhoneNumber.length > 5 && formattedPhoneNumber.length < 17) {
       return true;

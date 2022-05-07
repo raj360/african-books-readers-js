@@ -8,12 +8,14 @@ export default StyleSheet.create({
     padding: 5,
   },
   title: {
-    fontWeight: fonts.weight.bold,
+    fontWeight: fonts.weight.medium,
+    fontFamily: fonts.family.medium,
     fontSize: fonts.size.caption,
-    color: colors.textGray,
+    color: colors.defaultBlack,
   },
   author: {
     fontWeight: fonts.weight.light,
+    fontFamily: fonts.family.light,
     fontSize: fonts.size.caption,
     color: colors.textGray,
   },

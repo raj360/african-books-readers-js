@@ -3,7 +3,6 @@ import { ScrollView, View, Platform, SafeAreaView, TouchableOpacity, Image } fro
 import { CircleSnail } from 'react-native-progress';
 import { RNNDrawer, SideMenuView } from 'react-native-navigation-drawer-extension';
 import colors from 'themes/colors';
-import ReviewItem from 'components/ReviewItem';
 import Header from 'components/Header';
 import MenuIcon from 'assets/icons/menu.svg';
 import HomeLogoIcon from 'assets/images/home-logo.svg';
