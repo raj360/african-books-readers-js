@@ -10,14 +10,7 @@ import { CARD_STATUSES } from 'helpers/constants';
 
 import styles from './ActiveIndicator.styles';
 
-function ActiveIndicator({
-  status,
-  isLight,
-  indicatorStyle,
-  style,
-  textStyle,
-  removingDate,
-}) {
+function ActiveIndicator({ status, isLight, indicatorStyle, style, textStyle, removingDate }) {
   let color;
   let text;
   switch (status) {
@@ -51,20 +44,11 @@ function ActiveIndicator({
   return (
     <View style={[styles.indicatorContainer, style]}>
       {removingDate ? (
-        <Text
-          style={styles.removingDateText}
-        >{`Available till ${removingDate}`}</Text>
+        <Text style={styles.removingDateText}>{`Available till ${removingDate}`}</Text>
       ) : (
         <>
-          <View
-            style={[
-              { ...styles.indicator, backgroundColor: color },
-              indicatorStyle,
-            ]}
-          />
-          <Text style={[isLight ? styles.isLight : styles.text, textStyle]}>
-            {text}
-          </Text>
+          <View style={[{ ...styles.indicator, backgroundColor: color }, indicatorStyle]} />
+          <Text style={[isLight ? styles.isLight : styles.text, textStyle]}>{text}</Text>
         </>
       )}
     </View>

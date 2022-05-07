@@ -1,6 +1,7 @@
 import React from 'react';
 import { Rating } from 'react-native-ratings';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
+import Text from 'components/Text';
 
 import styles from './ReviewItem.styles';
 
