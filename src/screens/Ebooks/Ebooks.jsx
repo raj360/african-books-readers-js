@@ -32,7 +32,7 @@ function Ebooks({ route, componentId }) {
       title: 'A Girl is A Body Of Water',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/agirl.png'),
     },
     {
       author: 'Alain Mabankou',
@@ -46,49 +46,49 @@ function Ebooks({ route, componentId }) {
       title: 'Things Fall Apart',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/awalk.png'),
     },
     {
       author: 'AMETHYST',
       title: '#9b59b6',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/half.png'),
     },
     {
       author: 'WET ASPHALT',
       title: '#34495e',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/people.png'),
     },
     {
       author: 'GREEN SEA',
       title: '#16a085',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/thinking-slow.png'),
     },
     {
       author: 'NEPHRITIS',
       title: '#27ae60',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/water.png'),
     },
     {
       author: 'BELIZE HOLE',
       title: '#2980b9',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/sacrament.png'),
     },
     {
       author: 'WISTERIA',
       title: '#8e44ad',
       rating: 4,
       reviews: 248,
-      imageUrl: require('assets/images/aminatta.png'),
+      imageUrl: require('assets/images/fugitive.png'),
     },
     {
       author: 'MIDNIGHT BLUE',
@@ -175,7 +175,7 @@ function Ebooks({ route, componentId }) {
             </View>
           </TouchableOpacity>
         }
-        title="My ebooks"
+        title="My eBooks"
       />
 
       <View style={styles.sortLabel}>

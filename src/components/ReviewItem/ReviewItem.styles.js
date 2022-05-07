@@ -29,5 +29,5 @@ export default StyleSheet.create({
     width: 118,
     paddingTop: 5,
   },
-  image: { width: 115, height: 176 },
+  image: { width: 115, height: 176, resizeMode: 'stretch' },
 });

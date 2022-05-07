@@ -8,7 +8,7 @@ function Review({ title, author, rating, reviews, imageUrl }) {
   return (
     <TouchableOpacity>
       <View style={styles.container}>
-        <Image style={styles.image} source={require('assets/images/presignup-one.png')} />
+        <Image style={styles.image} source={imageUrl} />
 
         <View style={{ paddingTop: 10 }}>
           <Text numberOfLines={1} style={styles.title}>
@@ -19,10 +19,14 @@ function Review({ title, author, rating, reviews, imageUrl }) {
           </Text>
           <View style={styles.rating} pointerEvents="none">
             <Rating
-              style={{ alignSelf: 'flex-start', paddingTop: 2, paddingRight: 5 }}
+              style={{
+                alignSelf: 'flex-start',
+                paddingTop: 2,
+                paddingRight: 5,
+              }}
               ratingCount={5}
+              startingValue={rating}
               imageSize={10}
-              count={4}
             />
             <View
               style={{
