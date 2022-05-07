@@ -5,7 +5,7 @@ import colors from 'themes/colors';
 
 export default StyleSheet.create({
   container: {
-    padding: 5,
+    flex: 1,
   },
   title: {
     fontWeight: fonts.weight.medium,
@@ -21,13 +21,12 @@ export default StyleSheet.create({
   },
   reviews: {
     fontWeight: fonts.weight.light,
-    fontSize: fonts.size.tiny,
+    fontSize: fonts.size.smallest,
     color: colors.reivews,
   },
   rating: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 122,
+    width: 118,
     paddingTop: 5,
   },
   image: { width: 115, height: 176 },

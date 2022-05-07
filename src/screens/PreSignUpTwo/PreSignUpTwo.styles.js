@@ -1,4 +1,3 @@
-import Colors from 'constants/Colors';
 import { StyleSheet, Dimensions, Platform } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import fonts from 'themes/fonts';
