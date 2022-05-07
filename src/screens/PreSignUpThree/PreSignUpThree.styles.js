@@ -40,7 +40,7 @@ export default StyleSheet.create({
     color: colors.main,
     fontSize: fonts.size.h4,
     textDecorationLine: 'underline',
-    marginTop: 150,
+    marginTop: Platform.OS === 'android' ? 150 : 180,
     alignSelf: 'center',
     marginBottom: 36,
   },

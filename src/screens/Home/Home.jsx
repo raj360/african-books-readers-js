@@ -131,9 +131,9 @@ function Home({ route, componentId }) {
           contentContainerStyle={styles.content}
           showsVerticalScrollIndicator={false}
         >
-          <TouchableOpacity>
-            <View style={styles.headerView}>
-              <Text style={styles.headerCaption}>Continue reading</Text>
+          <View style={styles.headerView}>
+            <Text style={styles.headerCaption}>Continue reading</Text>
+            <View>
               <View style={styles.headerViewCard}>
                 <Image
                   style={styles.sideImage}
@@ -145,7 +145,7 @@ function Home({ route, componentId }) {
                 </View>
               </View>
             </View>
-          </TouchableOpacity>
+          </View>
 
           <View style={styles.nestedListView}>
             {/* My ebooks */}
