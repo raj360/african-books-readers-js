@@ -1,5 +1,12 @@
 import React, { useCallback } from 'react';
-import { ScrollView, TouchableOpacity, StatusBar, Platform, View } from 'react-native';
+import {
+  ScrollView,
+  TouchableOpacity,
+  StatusBar,
+  Platform,
+  View,
+  SafeAreaView,
+} from 'react-native';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
 import Header from 'components/Header';
@@ -24,10 +31,7 @@ function Browse() {
   }, [navigation]);
 
   return (
-    <>
-      <View style={styles.statusBar}>
-        <StatusBar backgroundColor="#fff" barStyle="dark-content" translucent />
-      </View>
+    <SafeAreaView>
       <Header
         left={
           <TouchableOpacity
@@ -48,7 +52,7 @@ function Browse() {
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
         {Platform.OS === 'ios' && <View style={styles.iosBottomScrollBackColor} />}
       </ScrollView>
-    </>
+    </SafeAreaView>
   );
 }
 
