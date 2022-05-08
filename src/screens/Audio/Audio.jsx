@@ -19,11 +19,9 @@ import ChevronDown from 'assets/icons/chevron-down.svg';
 import GridIcon from 'assets/icons/grid.svg';
 import ListIcon from 'assets/icons/list.svg';
 
-import colors from 'themes/colors';
-import Button from 'components/Button';
-import styles from './Ebooks.styles';
+import styles from './Audio.styles';
 
-function Ebooks({ route, componentId }) {
+function Audio({ route, componentId }) {
   const navigation = useNavigation();
 
   const [items, setItems] = React.useState([
@@ -175,7 +173,7 @@ function Ebooks({ route, componentId }) {
             </View>
           </TouchableOpacity>
         }
-        title="My eBooks"
+        title="My Audios"
       />
 
       <View style={styles.sortLabel}>
@@ -203,7 +201,7 @@ function Ebooks({ route, componentId }) {
           style={styles.gridView}
           fixed
           spacing={10}
-          renderItem={({ item }) => <ReviewItem {...item} />}
+          renderItem={({ item }) => <ReviewItem {...item} isAudio />}
         />
       </View>
 
@@ -214,4 +212,4 @@ function Ebooks({ route, componentId }) {
   );
 }
 
-export default Ebooks;
+export default Audio;

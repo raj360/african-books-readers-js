@@ -4,29 +4,46 @@ import { View, Image, TouchableOpacity } from 'react-native';
 import Text from 'components/Text';
 import styles from './ReviewItem.styles';
 
-function Review({ route }) {
+function Review({ title, author, rating, reviews, imageUrl, isAudio = false }) {
   return (
     <TouchableOpacity>
       <View style={styles.container}>
-        <Image style={styles.image} source={require('assets/images/presignup-one.png')} />
+        <Image style={styles.image} source={imageUrl} />
 
         <View style={{ paddingTop: 10 }}>
           <Text numberOfLines={1} style={styles.title}>
-            A Girl is a body of lies
+            {title}
           </Text>
           <Text numberOfLines={1} style={styles.author}>
-            Jeniffer Nansubuga
+            {author}
           </Text>
-          <View style={styles.rating} pointerEvents="none">
-            <Rating
-              style={{ alignSelf: 'flex-start', paddingTop: 2 }}
-              ratingCount={5}
-              imageSize={10}
-              count={4}
-            />
-            <Text style={styles.reviews}>248</Text>
-            <Text style={styles.reviews}>Reviews</Text>
-          </View>
+
+          {isAudio || (
+            <View style={styles.rating} pointerEvents="none">
+              <Rating
+                style={{
+                  alignSelf: 'flex-start',
+                  paddingTop: 2,
+                  paddingRight: 5,
+                }}
+                ratingCount={5}
+                startingValue={rating}
+                imageSize={10}
+              />
+              <View
+                style={{
+                  flexDirection: 'row',
+                  flex: 1,
+                  paddingHorizontal: 7,
+                  justifyContent: 'space-between',
+                  alignSelf: 'flex-end',
+                }}
+              >
+                <Text style={styles.reviews}>{reviews}</Text>
+                <Text style={styles.reviews}>Reviews</Text>
+              </View>
+            </View>
+          )}
         </View>
       </View>
     </TouchableOpacity>
