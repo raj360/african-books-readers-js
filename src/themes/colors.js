@@ -65,6 +65,8 @@ const colors = {
   graphItem: '#F1F4F5',
 
   disabledAddCardButton: '#9BCEF0',
+
+  searchInputBorderColor: '#C4C4C4',
 };
 
 export default colors;

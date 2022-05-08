@@ -11,31 +11,16 @@ export default StyleSheet.create({
     flex: 1,
   },
   content: {
-    width: '100%',
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 5,
   },
-  statusBar: {
-    paddingTop: getStatusBarHeight(),
-    backgroundColor: '#fff',
+  header: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 30,
   },
-  transactionStyles: {
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    elevation: 10,
-    shadowOpacity: 0.9,
-    shadowRadius: 6,
-  },
-  titleStyle: {
-    fontWeight: fonts.weight.bold,
-  },
-  sendMoneyButton: {
+  searchInput: {
     width: SCREEN_WIDTH * 0.9,
-  },
-  transactionsContainer: {
-    overflow: 'hidden',
-    paddingTop: 2,
-    height: SCREEN_HEIGHT * 0.38,
   },
 });
