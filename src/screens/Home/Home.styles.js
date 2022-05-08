@@ -102,8 +102,8 @@ export default StyleSheet.create({
   },
   bookName: {
     fontSize: fonts.size.medium,
-    fontWeight: fonts.weight.bold,
-    fontFamily: fonts.family.bold,
+    fontWeight: fonts.weight.medium,
+    fontFamily: fonts.family.medium,
   },
   nestedListView: {
     backgroundColor: colors.main,

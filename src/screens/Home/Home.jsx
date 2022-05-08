@@ -132,7 +132,7 @@ function Home({ route, componentId }) {
         >
           <View style={styles.headerView}>
             <Text style={styles.headerCaption}>Continue reading</Text>
-            <View>
+            <TouchableOpacity>
               <View style={styles.headerViewCard}>
                 <Image
                   style={styles.sideImage}
@@ -143,7 +143,7 @@ function Home({ route, componentId }) {
                   <Text style={styles.author}>Daniel Kahneman</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.nestedListView}>
