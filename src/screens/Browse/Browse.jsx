@@ -12,6 +12,7 @@ import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import Header from 'components/Header';
 
 import BackArrowIcon from 'assets/icons/chevron-left.svg';
+import MenuIcon from 'assets/icons/menu.svg';
 
 import colors from 'themes/colors';
 import Button from 'components/Button';
@@ -26,20 +27,12 @@ function Browse() {
     }
   });
 
-  const onBackNavigation = useCallback(() => {
-    navigation.goBack();
-  }, [navigation]);
-
   return (
     <SafeAreaView>
       <Header
         left={
-          <TouchableOpacity
-            // style={{ padding: 10, paddingLeft: 0 }}
-            // activeOpacity={0.7}
-            onPress={onBackNavigation}
-          >
-            <BackArrowIcon />
+          <TouchableOpacity>
+            <MenuIcon />
           </TouchableOpacity>
         }
         right={
