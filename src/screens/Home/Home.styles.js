@@ -1,10 +1,8 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import fonts from 'themes/fonts';
 import colors from 'themes/colors';
-
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export default StyleSheet.create({
   container: {
