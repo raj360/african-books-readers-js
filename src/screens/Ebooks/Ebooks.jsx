@@ -19,8 +19,6 @@ import ChevronDown from 'assets/icons/chevron-down.svg';
 import GridIcon from 'assets/icons/grid.svg';
 import ListIcon from 'assets/icons/list.svg';
 
-import colors from 'themes/colors';
-import Button from 'components/Button';
 import styles from './Ebooks.styles';
 
 function Ebooks({ route, componentId }) {
@@ -200,7 +198,6 @@ function Ebooks({ route, componentId }) {
         <FlatGrid
           itemDimension={115}
           data={items}
-          style={styles.gridView}
           fixed
           spacing={10}
           renderItem={({ item }) => <ReviewItem {...item} />}
