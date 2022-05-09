@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 
 import Header from 'components/Header';
@@ -13,12 +13,20 @@ import styles from './Browse.styles';
 
 function Browse() {
   const [inputValue, setInputValue] = useState('');
-  const filters = [
+  const [selected, setSelected] = useState([
     { name: 'By Genre', isSelected: true },
     { name: 'By Author', isSelected: false },
     { name: 'By Region', isSelected: false },
     { name: 'By Language', isSelected: false },
-  ];
+  ]);
+
+  const pressSelection = (selection) => {
+    setSelected((selected) => {
+      return selected.map(({ name }) => {
+        return name === selection ? { name, isSelected: true } : { name, isSelected: false };
+      });
+    });
+  };
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -39,8 +47,9 @@ function Browse() {
           </View>
           <View style={{ paddingHorizontal: 20, flexDirection: 'row' }}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {filters.map(({ name, isSelected }, index) => (
+              {selected.map(({ name, isSelected }, index) => (
                 <TouchableOpacity
+                  onPress={() => pressSelection(name)}
                   key={`${index + 1}`}
                   style={[
                     styles.filterTextContainer,
