@@ -168,9 +168,7 @@ function Browse() {
         return item.title.match(regex) || item.author.match(regex);
       });
       if (!absoluteList?.length) {
-        return (
-          <Text style={styles.noRecipientsText}>Your search did not match any recipient.</Text>
-        );
+        return <Text style={styles.noSearchText}>Your search did not match any Book.</Text>;
       }
 
       return (

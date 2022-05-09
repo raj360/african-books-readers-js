@@ -41,4 +41,9 @@ export default StyleSheet.create({
     fontFamily: fonts.family.light,
     fontSize: fonts.size.small,
   },
+  noSearchText: {
+    color: colors.dateGray,
+    alignSelf: 'center',
+    paddingVertical: 30,
+  },
 });
