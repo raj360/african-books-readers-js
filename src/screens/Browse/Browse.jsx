@@ -32,7 +32,7 @@ function Browse() {
           <View style={styles.header}>
             <View style={styles.searchInput}>
               <SearchInput
-                style={{ borderColor: colors.searchInputBorderColor }}
+                style={{ borderColor: colors.main }}
                 value={inputValue}
                 onChangeText={setInputValue}
                 placeholder="Search"
