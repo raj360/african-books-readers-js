@@ -132,7 +132,7 @@ function Home({ route, componentId }) {
         >
           <View style={styles.headerView}>
             <Text style={styles.headerCaption}>Continue reading</Text>
-            <View>
+            <TouchableOpacity>
               <View style={styles.headerViewCard}>
                 <Image
                   style={styles.sideImage}
@@ -143,7 +143,7 @@ function Home({ route, componentId }) {
                   <Text style={styles.author}>Daniel Kahneman</Text>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.nestedListView}>
@@ -159,7 +159,7 @@ function Home({ route, componentId }) {
             </View>
 
             <View>
-              <ScrollView horizontal>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {ebooks.map((book) => (
                   <TouchableOpacity>
                     <Image style={styles.bookImage} source={book} />
@@ -180,7 +180,7 @@ function Home({ route, componentId }) {
             </View>
 
             <View>
-              <ScrollView horizontal>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {audios.map((book) => (
                   <TouchableOpacity>
                     <Image style={styles.bookImage} source={book} />
@@ -212,7 +212,7 @@ function Home({ route, componentId }) {
             </View>
 
             <View>
-              <ScrollView horizontal>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {authors.map(({ image, name }) => (
                   <TouchableOpacity>
                     <View style={styles.authorContainer}>

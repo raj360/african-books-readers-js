@@ -2,6 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import fonts from 'themes/fonts';
+import colors from 'themes/colors';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -11,31 +12,33 @@ export default StyleSheet.create({
     flex: 1,
   },
   content: {
-    width: '100%',
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingTop: 5,
   },
-  statusBar: {
-    paddingTop: getStatusBarHeight(),
-    backgroundColor: '#fff',
+  header: {
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 20,
   },
-  transactionStyles: {
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    elevation: 10,
-    shadowOpacity: 0.9,
-    shadowRadius: 6,
-  },
-  titleStyle: {
-    fontWeight: fonts.weight.bold,
-  },
-  sendMoneyButton: {
+  searchInput: {
     width: SCREEN_WIDTH * 0.9,
   },
-  transactionsContainer: {
-    overflow: 'hidden',
-    paddingTop: 2,
-    height: SCREEN_HEIGHT * 0.38,
+  filterTextContainer: {
+    borderWidth: 1,
+    borderColor: colors.tabBarInactive,
+    padding: 9,
+    backgroundColor: colors.tabBarInactive,
+    width: 120,
+    borderRadius: 28,
+    paddingVertical: 9,
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginHorizontal: 10,
+  },
+  filterText: {
+    fontWeight: fonts.weight.light,
+    fontFamily: fonts.family.light,
+    fontSize: fonts.size.small,
   },
 });
