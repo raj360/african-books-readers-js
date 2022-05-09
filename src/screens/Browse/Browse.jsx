@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import { TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import { TouchableOpacity, View, SafeAreaView, ScrollView, ActivityIndicator } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 
 import Header from 'components/Header';
@@ -11,10 +11,12 @@ import MenuIcon from 'assets/icons/menu.svg';
 import colors from 'themes/colors';
 import Text from 'components/Text';
 import styles from './Browse.styles';
+import useInterval from 'helpers/useInterval';
 
 function Browse() {
   const [inputValue, setInputValue] = useState('');
   const [activeFilter, setActiveFilter] = useState('By Genre');
+  const [isLoading, setIsloading] = useState(false);
   const [selections, setSelections] = useState([
     { name: 'By Genre', isSelected: true },
     { name: 'By Author', isSelected: false },
@@ -144,8 +146,13 @@ function Browse() {
     },
   ]);
 
+  useInterval(() => {
+    setIsloading(false);
+  }, 2000);
+
   const pressSelection = useCallback((selected) => {
     setActiveFilter(selected);
+    setIsloading(true);
     setSelections((selections) => {
       return selections.map(({ name }) => {
         return name === selected ? { name, isSelected: true } : { name, isSelected: false };
@@ -213,7 +220,12 @@ function Browse() {
               ))}
             </ScrollView>
           </View>
-          {content}
+
+          {isLoading ? (
+            <ActivityIndicator style={{ padding: 20 }} size="large" color={colors.primary} />
+          ) : (
+            content
+          )}
         </View>
       </DismissKeyboard>
     </SafeAreaView>
