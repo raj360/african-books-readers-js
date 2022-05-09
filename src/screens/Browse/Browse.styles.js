@@ -2,6 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import fonts from 'themes/fonts';
+import colors from 'themes/colors';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -18,9 +19,26 @@ export default StyleSheet.create({
   header: {
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   searchInput: {
     width: SCREEN_WIDTH * 0.9,
+  },
+  filterTextContainer: {
+    borderWidth: 1,
+    borderColor: colors.tabBarInactive,
+    padding: 9,
+    backgroundColor: colors.tabBarInactive,
+    width: 100,
+    borderRadius: 28,
+    paddingVertical: 0,
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginHorizontal: 10,
+  },
+  filterText: {
+    fontWeight: fonts.weight.light,
+    fontFamily: fonts.family.light,
+    fontSize: fonts.size.small,
   },
 });
