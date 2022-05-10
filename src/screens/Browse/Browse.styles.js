@@ -1,11 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
 
 import fonts from 'themes/fonts';
 import colors from 'themes/colors';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 export default StyleSheet.create({
   container: {
@@ -45,5 +43,12 @@ export default StyleSheet.create({
     color: colors.dateGray,
     alignSelf: 'center',
     paddingVertical: 30,
+  },
+  sortOptions: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingRight: 20,
   },
 });

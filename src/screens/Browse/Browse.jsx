@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { TouchableOpacity, View, SafeAreaView, ScrollView, ActivityIndicator } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 
@@ -7,11 +7,13 @@ import DismissKeyboard from 'components/DismissKeyboard';
 import SearchInput from 'components/SeacrhInput';
 import ReviewItem from 'components/ReviewItem';
 import MenuIcon from 'assets/icons/menu.svg';
+import GridIcon from 'assets/icons/grid.svg';
+import ListIcon from 'assets/icons/list.svg';
 
 import colors from 'themes/colors';
 import Text from 'components/Text';
-import styles from './Browse.styles';
 import useInterval from 'helpers/useInterval';
+import styles from './Browse.styles';
 
 function Browse() {
   const [inputValue, setInputValue] = useState('');
@@ -217,6 +219,14 @@ function Browse() {
                 </TouchableOpacity>
               ))}
             </ScrollView>
+          </View>
+          <View style={styles.sortOptions}>
+            <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
+              <ListIcon />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <GridIcon />
+            </TouchableOpacity>
           </View>
 
           {isLoading ? (
