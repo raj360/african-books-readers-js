@@ -14,6 +14,7 @@ import Home from 'screens/Home';
 import Browse from 'screens/Browse';
 import Ebooks from 'screens/Ebooks';
 import Audio from 'screens/Audio';
+import Favorite from 'screens/Favorite';
 
 import colors from 'themes/colors';
 import commonStyles from 'themes/commonStyles';
@@ -56,6 +57,20 @@ function BrowseScreens() {
       }}
     >
       <AccountStack.Screen name="Browse" component={Browse} />
+    </AccountStack.Navigator>
+  );
+}
+function FavoriteScreens() {
+  return (
+    <AccountStack.Navigator
+      headerMode="none"
+      screenOptions={{
+        cardStyle: {
+          backgroundColor: colors.main,
+        },
+      }}
+    >
+      <AccountStack.Screen name="Favorite" component={Favorite} />
     </AccountStack.Navigator>
   );
 }
@@ -143,7 +158,7 @@ function Tabs({ componentId }) {
       />
       <Tab.Screen
         name="Favorites"
-        component={BrowseScreens}
+        component={FavoriteScreens}
         options={{
           tabBarLabel: 'Favorites',
           tabBarIcon: (icon) => (
