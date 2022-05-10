@@ -175,10 +175,10 @@ function Browse() {
 
       return (
         <FlatGrid
-          itemDimension={115}
           data={inputValue ? absoluteList : items}
+          itemDimension={105}
           fixed
-          spacing={10}
+          spacing={5}
           renderItem={({ item }) => <ReviewItem {...item} />}
         />
       );

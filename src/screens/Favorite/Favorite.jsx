@@ -121,7 +121,7 @@ function Favorite() {
             itemDimension={105}
             data={items}
             fixed
-            spacing={0}
+            spacing={5}
             renderItem={({ item }) => <ReviewItem {...item} />}
           />
         )}
