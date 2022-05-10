@@ -151,4 +151,10 @@ export default StyleSheet.create({
     width: 54,
     textAlign: 'center',
   },
+  authorCaptions: {
+    paddingBottom: 15,
+    paddingTop: 9,
+    fontWeight: fonts.weight.regular,
+    fontFamily: fonts.family.regular,
+  },
 });
