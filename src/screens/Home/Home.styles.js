@@ -127,7 +127,7 @@ export default StyleSheet.create({
     height: 148,
     width: 104,
     borderWidth: 1,
-    paddingHorizontal: 8,
+    marginHorizontal: 2,
     borderColor: colors.main,
     resizeMode: 'stretch',
   },

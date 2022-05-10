@@ -180,7 +180,7 @@ function Ebooks({ route, componentId }) {
           <ChevronDown />
         </View>
 
-        <View style={[styles.headerTextContainer, styles.sortIcons]}>
+        <View style={[styles.sortIcons]}>
           <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
             <ListIcon />
           </TouchableOpacity>

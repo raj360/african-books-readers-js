@@ -202,8 +202,8 @@ function Home({ route, componentId }) {
 
             <View>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {authors.map(({ image, name }) => (
-                  <TouchableOpacity>
+                {authors.map(({ image, name }, index) => (
+                  <TouchableOpacity key={`${index + 1}`}>
                     <View style={styles.authorContainer}>
                       <Image style={styles.authorImage} source={image} />
                       <Text style={styles.authorName}>{name}</Text>
