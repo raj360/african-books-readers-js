@@ -51,4 +51,23 @@ export default StyleSheet.create({
     paddingTop: 10,
     paddingRight: 20,
   },
+  sortIcons: {
+    justifyContent: 'space-between',
+    paddingRight: 20,
+  },
+  sortLabel: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  text: {
+    fontSize: fonts.size.small,
+    fontWeight: fonts.weight.light,
+    fontFamily: fonts.family.light,
+    paddingRight: 10,
+  },
+  headerTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

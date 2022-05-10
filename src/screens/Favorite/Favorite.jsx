@@ -96,33 +96,24 @@ function Favorite() {
         }
         title="My Favorite"
       />
-      <View style={styles.container} contentContainerStyle={styles.content}>
-        {/* <View style={styles.sortOptions}>
+      <View style={styles.sortLabel}>
+        <View
+          style={[styles.headerTextContainer, { justifyContent: 'flex-start', paddingLeft: 30 }]}
+        >
+          <Text style={styles.text}>Sort By</Text>
+          <ChevronDown />
+        </View>
+
+        <View style={[styles.headerTextContainer, styles.sortIcons]}>
           <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
             <ListIcon />
           </TouchableOpacity>
           <TouchableOpacity>
             <GridIcon />
           </TouchableOpacity>
-        </View> */}
-        <View style={styles.sortLabel}>
-          <View
-            style={[styles.headerTextContainer, { justifyContent: 'flex-start', paddingLeft: 30 }]}
-          >
-            <Text style={styles.addText}>Sort By</Text>
-            <ChevronDown />
-          </View>
-
-          <View style={[styles.headerTextContainer, styles.sortIcons]}>
-            <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
-              <ListIcon />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <GridIcon />
-            </TouchableOpacity>
-          </View>
         </View>
-
+      </View>
+      <View style={styles.container} contentContainerStyle={styles.content}>
         {isLoading ? (
           <ActivityIndicator style={{ padding: 20 }} size="large" color={colors.primary} />
         ) : (
