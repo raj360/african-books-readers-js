@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import {
   ScrollView,
   TouchableOpacity,
@@ -196,11 +196,10 @@ function Audio({ route, componentId }) {
 
       <View>
         <FlatGrid
-          itemDimension={115}
+          itemDimension={105}
           data={items}
-          style={styles.gridView}
           fixed
-          spacing={10}
+          spacing={5}
           renderItem={({ item }) => <ReviewItem {...item} isAudio />}
         />
       </View>

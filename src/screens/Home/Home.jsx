@@ -160,8 +160,8 @@ function Home({ route, componentId }) {
 
             <View>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {ebooks.map((book) => (
-                  <TouchableOpacity>
+                {ebooks.map((book, index) => (
+                  <TouchableOpacity key={`${index + 1}`}>
                     <Image style={styles.bookImage} source={book} />
                   </TouchableOpacity>
                 ))}
@@ -181,8 +181,8 @@ function Home({ route, componentId }) {
 
             <View>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {audios.map((book) => (
-                  <TouchableOpacity>
+                {audios.map((book, index) => (
+                  <TouchableOpacity key={`${index + 1}`}>
                     <Image style={styles.bookImage} source={book} />
                   </TouchableOpacity>
                 ))}
@@ -191,18 +191,7 @@ function Home({ route, componentId }) {
 
             {/* My authors */}
             <View style={styles.viewHeaderContainer}>
-              <Text
-                style={[
-                  styles.headerCaption,
-                  {
-                    paddingTop: 9,
-                    fontWeight: fonts.weight.regular,
-                    fontFamily: fonts.family.regular,
-                  },
-                ]}
-              >
-                My authors
-              </Text>
+              <Text style={styles.authorCaptions}>My authors</Text>
               <TouchableOpacity>
                 <View style={styles.viewAllContainer}>
                   <Text style={styles.viewAllText}>View All</Text>
@@ -213,8 +202,8 @@ function Home({ route, componentId }) {
 
             <View>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {authors.map(({ image, name }) => (
-                  <TouchableOpacity>
+                {authors.map(({ image, name }, index) => (
+                  <TouchableOpacity key={`${index + 1}`}>
                     <View style={styles.authorContainer}>
                       <Image style={styles.authorImage} source={image} />
                       <Text style={styles.authorName}>{name}</Text>

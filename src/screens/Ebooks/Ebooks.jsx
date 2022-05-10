@@ -153,10 +153,6 @@ function Ebooks({ route, componentId }) {
     }
   });
 
-  const onBackNavigation = useCallback(() => {
-    navigation.goBack();
-  }, [navigation]);
-
   return (
     <SafeAreaView>
       <Header
@@ -184,7 +180,7 @@ function Ebooks({ route, componentId }) {
           <ChevronDown />
         </View>
 
-        <View style={[styles.headerTextContainer, styles.sortIcons]}>
+        <View style={[styles.sortIcons]}>
           <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
             <ListIcon />
           </TouchableOpacity>
@@ -196,10 +192,10 @@ function Ebooks({ route, componentId }) {
 
       <View>
         <FlatGrid
-          itemDimension={115}
+          itemDimension={105}
           data={items}
           fixed
-          spacing={10}
+          spacing={5}
           renderItem={({ item }) => <ReviewItem {...item} />}
         />
       </View>

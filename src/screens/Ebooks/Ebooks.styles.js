@@ -50,7 +50,9 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   sortIcons: {
-    justifyContent: 'space-between',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingRight: 20,
   },
   sortLabel: {
