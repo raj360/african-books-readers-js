@@ -104,8 +104,8 @@ function Favorite() {
           <ChevronDown />
         </View>
 
-        <View style={[styles.headerTextContainer, styles.sortIcons]}>
-          <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
+        <View style={[styles.sortIcons]}>
+          <TouchableOpacity style={styles.iconFeel}>
             <ListIcon />
           </TouchableOpacity>
           <TouchableOpacity>
@@ -118,10 +118,10 @@ function Favorite() {
           <ActivityIndicator style={{ padding: 20 }} size="large" color={colors.primary} />
         ) : (
           <FlatGrid
-            itemDimension={115}
+            itemDimension={105}
             data={items}
             fixed
-            spacing={10}
+            spacing={0}
             renderItem={({ item }) => <ReviewItem {...item} />}
           />
         )}

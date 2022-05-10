@@ -52,6 +52,8 @@ export default StyleSheet.create({
     paddingRight: 20,
   },
   sortIcons: {
+    flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
     paddingRight: 20,
   },
@@ -69,5 +71,9 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  iconFeel: {
+    paddingTop: 5,
+    paddingRight: 5,
   },
 });
