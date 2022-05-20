@@ -18,7 +18,7 @@ Navigation.events().registerAppLaunchedListener(() => {
         children: [
           {
             component: {
-              name: 'com.myApp.WelcomeScreen',
+              name: 'com.africansbooks.App',
               options: {
                 topBar: {
                   visible: false,
