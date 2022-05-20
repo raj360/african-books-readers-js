@@ -10,7 +10,7 @@ import CustomDrawer from './src/CustomDrawer';
 // // the environment is set up appropriately
 // registerRootComponent(App);
 Navigation.registerComponent('CustomDrawer', () => RNNDrawer.create(CustomDrawer));
-Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
+Navigation.registerComponent('com.africansbooks.App', () => App);
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {

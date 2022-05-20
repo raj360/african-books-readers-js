@@ -18,7 +18,7 @@ import styles from './DrawerButton.styles';
  * in this project, HomePage
  * is the initial component.
  */
-let lastPageName = 'com.myApp.WelcomeScreen';
+let lastPageName = 'com.africansbooks.App';
 const CurrentComponentName = 'CustomDrawer';
 
 Navigation.events().registerComponentDidAppearListener((event) => {
