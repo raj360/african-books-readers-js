@@ -27,7 +27,9 @@ Navigation.events().registerComponentDidAppearListener((event) => {
   }
 });
 
-const DrawerButton = ({ name, component, parentComponentId, icon, routes }) => {
+const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRoute }) => {
+  // const settingsRoute = routes.pop();
+  console.log({ routes });
   const handleOpenPage = () => {
     RNNDrawer.dismissDrawer();
 
@@ -45,22 +47,25 @@ const DrawerButton = ({ name, component, parentComponentId, icon, routes }) => {
   return (
     <View style={styles.container}>
       <View style={styles.icon}>{icon}</View>
-      {routes.length > 0 ? (
+      <>
         <View style={styles.buttonContainer}>
-          <Text style={styles.buttonText}>{name}</Text>
+          {isRoute ? (
+            <Text style={styles.buttonText}>{name}</Text>
+          ) : (
+            <TouchableOpacity>
+              {/* routes[routes.length - 1].name */}
+              <Text style={styles.buttonText}>{name}</Text>
+            </TouchableOpacity>
+          )}
           <View>
-            {routes.map((route, index) => (
+            {routes.map(({ path, name, params }, index) => (
               <TouchableOpacity key={`${index + 2}`}>
-                <Text style={styles.subText}>{route}</Text>
+                <Text style={styles.subText}>{name}</Text>
               </TouchableOpacity>
             ))}
           </View>
         </View>
-      ) : (
-        <TouchableOpacity style={[styles.buttonContainer, { paddingBottom: 48 }]}>
-          <Text style={styles.buttonText}>{name}</Text>
-        </TouchableOpacity>
-      )}
+      </>
     </View>
   );
 };
