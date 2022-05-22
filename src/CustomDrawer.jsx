@@ -66,7 +66,7 @@ const Buttons = [
   {
     id: 1,
     name: 'READ',
-    component: 'HomePage',
+    component: 'page1',
     icon: <BookReaderIcon />,
     routes: [{ path: 'Ebooks', name: 'My eBooks', param: null }],
     isRoute: true,
@@ -74,7 +74,7 @@ const Buttons = [
   {
     id: 2,
     name: 'LISTEN',
-    component: 'Page1',
+    component: 'Page2',
     icon: <ListeningIcon />,
     routes: [{ path: 'Audio', name: 'My Audio Books', param: null }],
     isRoute: true,
@@ -82,7 +82,7 @@ const Buttons = [
   {
     id: 3,
     name: 'BROWSE',
-    component: 'Page2',
+    component: 'Page3',
     icon: <BrowserIcon />,
     routes: [
       { path: 'Browse', name: 'By Genre', param: 'genre' },
@@ -95,7 +95,7 @@ const Buttons = [
   {
     id: 4,
     name: 'SETTINGS',
-    component: 'AnotherPage',
+    component: 'page4',
     icon: <SettingsIcon />,
     routes: [{ path: 'Settings', name: null, param: null }],
     isRoute: false,

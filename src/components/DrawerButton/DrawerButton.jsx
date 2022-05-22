@@ -1,12 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import Text from 'components/Text';
 import { navigate } from 'helpers/rootNavigation';
-import styles from './DrawerButton.styles';
 import { RNNDrawer } from 'react-native-navigation-drawer-extension';
+import styles from './DrawerButton.styles';
 
 const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRoute }) => {
   const onDrawerItemPressed = useCallback((name, param) => {
+    console.log({ name, param });
     RNNDrawer.dismissDrawer();
     navigate({ name, param });
   }, []);

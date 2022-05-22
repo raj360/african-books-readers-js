@@ -8,8 +8,6 @@ import headPhonesIcon from 'assets/icons/tabBar/headphones.svg';
 import SearchIcon from 'assets/icons/tabBar/search.svg';
 import HeartIcon from 'assets/icons/tabBar/heart.svg';
 
-// import * as RootNavigation from 'helpers/rootNavigation';
-
 import Home from 'screens/Home';
 import Browse from 'screens/Browse';
 import Ebooks from 'screens/Ebooks';
@@ -128,10 +126,10 @@ function Tabs({ componentId }) {
         }}
       />
       <Tab.Screen
-        name="eBook"
+        name="Ebooks"
         component={EbookScreens}
         options={{
-          tabBarLabel: 'eBook',
+          tabBarLabel: 'eBooks',
           tabBarIcon: (icon) => (
             <TabBarIcon icon={BookIcon} focused={icon.focused} fill={icon.color} />
           ),
@@ -152,7 +150,7 @@ function Tabs({ componentId }) {
         name="Audio"
         component={AudioScreens}
         options={{
-          tabBarLabel: 'audio',
+          tabBarLabel: 'Audios',
           tabBarIcon: (icon) => <TabBarIcon icon={headPhonesIcon} focused={icon.focused} />,
         }}
       />
