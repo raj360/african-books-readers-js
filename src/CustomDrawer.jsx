@@ -68,7 +68,7 @@ const Buttons = [
     name: 'READ',
     component: 'HomePage',
     icon: <BookReaderIcon />,
-    routes: [{ path: 'Ebooks', name: 'My eBooks' }],
+    routes: [{ path: 'Ebooks', name: 'My eBooks', param: null }],
     isRoute: true,
   },
   {
@@ -76,7 +76,7 @@ const Buttons = [
     name: 'LISTEN',
     component: 'Page1',
     icon: <ListeningIcon />,
-    routes: [{ path: 'Audio', name: 'My Audio Books' }],
+    routes: [{ path: 'Audio', name: 'My Audio Books', param: null }],
     isRoute: true,
   },
   {
@@ -97,7 +97,7 @@ const Buttons = [
     name: 'SETTINGS',
     component: 'AnotherPage',
     icon: <SettingsIcon />,
-    routes: [{ path: 'Settings', name: null }],
+    routes: [{ path: 'Settings', name: null, param: null }],
     isRoute: false,
   },
 ];

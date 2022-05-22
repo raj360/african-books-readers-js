@@ -1,49 +1,17 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { Navigation } from 'react-native-navigation';
-import { RNNDrawer } from 'react-native-navigation-drawer-extension';
 import Text from 'components/Text';
 import styles from './DrawerButton.styles';
-
-/**
- * A workaround to avoid pushing
- * the same screen multiple times.
- *
- * For details, check:
- * https://github.com/aspect-apps/react-native-navigation-drawer-extension/issues/31
- */
-
-/**
- * We set this to HomePage because,
- * in this project, HomePage
- * is the initial component.
- */
-let lastPageName = 'com.africansbooks.App';
-const CurrentComponentName = 'CustomDrawer';
-
-Navigation.events().registerComponentDidAppearListener((event) => {
-  if (event.componentName !== CurrentComponentName) {
-    lastPageName = event.componentName;
-  }
-});
+import { navigate } from 'helpers/rootNavigation';
 
 const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRoute }) => {
-  // const settingsRoute = routes.pop();
-  console.log({ routes });
-  const handleOpenPage = () => {
-    RNNDrawer.dismissDrawer();
+  const [routerObject, setRouterObject] = useState({ name: '', param: {} });
 
-    if (lastPageName === component) {
-      return;
-    }
+  const onDrawerItemPressed = useCallback((test) => {
+    console.log({ test });
+    // navigate(routerObject.name, routerObject.param);
+  }, []);
 
-    Navigation.push(parentComponentId, {
-      component: {
-        name: component,
-      },
-    });
-  };
-  // onPress={handleOpenPage}
   return (
     <View style={styles.container}>
       <View style={styles.icon}>{icon}</View>
@@ -52,7 +20,7 @@ const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRout
           {isRoute ? (
             <Text style={styles.buttonText}>{name}</Text>
           ) : (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => onDrawerItemPressed(routes[routes.length - 1].path)}>
               {/* routes[routes.length - 1].name */}
               <Text style={styles.buttonText}>{name}</Text>
             </TouchableOpacity>
