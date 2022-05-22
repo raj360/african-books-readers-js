@@ -1,15 +1,12 @@
 import React, { useCallback, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import Text from 'components/Text';
-import styles from './DrawerButton.styles';
 import { navigate } from 'helpers/rootNavigation';
+import styles from './DrawerButton.styles';
 
 const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRoute }) => {
-  const [routerObject, setRouterObject] = useState({ name: '', param: {} });
-
-  const onDrawerItemPressed = useCallback((test) => {
-    console.log({ test });
-    // navigate(routerObject.name, routerObject.param);
+  const onDrawerItemPressed = useCallback((name, param) => {
+    navigate({ name, param });
   }, []);
 
   return (
@@ -21,13 +18,15 @@ const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRout
             <Text style={styles.buttonText}>{name}</Text>
           ) : (
             <TouchableOpacity onPress={() => onDrawerItemPressed(routes[routes.length - 1].path)}>
-              {/* routes[routes.length - 1].name */}
               <Text style={styles.buttonText}>{name}</Text>
             </TouchableOpacity>
           )}
           <View>
-            {routes.map(({ path, name, params }, index) => (
-              <TouchableOpacity key={`${index + 2}`}>
+            {routes.map(({ path, name, param }, index) => (
+              <TouchableOpacity
+                onPress={() => onDrawerItemPressed(path, param)}
+                key={`${index + 2}`}
+              >
                 <Text style={styles.subText}>{name}</Text>
               </TouchableOpacity>
             ))}
