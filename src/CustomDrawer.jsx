@@ -68,28 +68,37 @@ const Buttons = [
     name: 'READ',
     component: 'HomePage',
     icon: <BookReaderIcon />,
-    routes: ['My eBooks'],
+    routes: [{ path: 'Ebooks', name: 'My eBooks', param: null }],
+    isRoute: true,
   },
   {
     id: 2,
     name: 'LISTEN',
     component: 'Page1',
     icon: <ListeningIcon />,
-    routes: ['My Audio Books'],
+    routes: [{ path: 'Audio', name: 'My Audio Books', param: null }],
+    isRoute: true,
   },
   {
     id: 3,
     name: 'BROWSE',
     component: 'Page2',
     icon: <BrowserIcon />,
-    routes: ['By Genre', 'By Author', 'By Region', 'By language'],
+    routes: [
+      { path: 'Browse', name: 'By Genre', param: 'genre' },
+      { path: 'Browse', name: 'By Author', param: 'author' },
+      { path: 'Browse', name: 'By Region', param: 'region' },
+      { path: 'Browse', name: 'By Language', param: 'language' },
+    ],
+    isRoute: true,
   },
   {
     id: 4,
     name: 'SETTINGS',
     component: 'AnotherPage',
     icon: <SettingsIcon />,
-    routes: [],
+    routes: [{ path: 'Settings', name: null, param: null }],
+    isRoute: false,
   },
 ];
 
@@ -113,6 +122,7 @@ const CustomDrawer = ({ parentComponentId }) => {
               parentComponentId={parentComponentId}
               icon={button.icon}
               routes={button.routes}
+              isRoute={button.isRoute}
             />
           );
         })}
