@@ -3,9 +3,11 @@ import { TouchableOpacity, View } from 'react-native';
 import Text from 'components/Text';
 import { navigate } from 'helpers/rootNavigation';
 import styles from './DrawerButton.styles';
+import { RNNDrawer } from 'react-native-navigation-drawer-extension';
 
 const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRoute }) => {
   const onDrawerItemPressed = useCallback((name, param) => {
+    RNNDrawer.dismissDrawer();
     navigate({ name, param });
   }, []);
 
