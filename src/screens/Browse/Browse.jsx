@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { TouchableOpacity, View, SafeAreaView, ScrollView, ActivityIndicator } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
-
+import SidbarWrapper from 'components/SidebarWrapper';
+import { RNNDrawer } from 'react-native-navigation-drawer-extension';
 import Header from 'components/Header';
 import DismissKeyboard from 'components/DismissKeyboard';
 import SearchInput from 'components/SeacrhInput';
@@ -15,7 +16,7 @@ import Text from 'components/Text';
 import useInterval from 'helpers/useInterval';
 import styles from './Browse.styles';
 
-function Browse() {
+function Browse(props) {
   const [inputValue, setInputValue] = useState('');
   const [activeFilter, setActiveFilter] = useState('By Genre');
   const [isLoading, setIsloading] = useState(false);
@@ -25,6 +26,8 @@ function Browse() {
     { name: 'By Region', isSelected: false },
     { name: 'By Language', isSelected: false },
   ]);
+
+  console.log({ props });
 
   const [items, setItems] = React.useState([
     {
@@ -185,58 +188,68 @@ function Browse() {
     }
   }, [inputValue, items]);
 
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Header
-        left={
-          <TouchableOpacity>
-            <MenuIcon />
-          </TouchableOpacity>
-        }
-        title="Browse"
-      />
-      <DismissKeyboard>
-        <View style={styles.container} contentContainerStyle={styles.content}>
-          <View style={styles.header}>
-            <View style={styles.searchInput}>
-              <SearchInput value={inputValue} onChangeText={setInputValue} />
-            </View>
-          </View>
-          <View style={{ paddingHorizontal: 20, flexDirection: 'row' }}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {selections.map(({ name, isSelected }, index) => (
-                <TouchableOpacity
-                  onPress={() => pressSelection(name)}
-                  key={`${index + 1}`}
-                  style={[
-                    styles.filterTextContainer,
-                    isSelected || { backgroundColor: colors.main },
-                  ]}
-                >
-                  <Text style={[styles.filterText, isSelected && { color: colors.main }]}>
-                    {`${name.toString()}`}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
-          <View style={styles.sortOptions}>
-            <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
-              <ListIcon />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <GridIcon />
-            </TouchableOpacity>
-          </View>
+  const onPress = () => {
+    RNNDrawer.showDrawer({
+      component: {
+        name: 'CustomDrawer',
+      },
+    });
+  };
 
-          {isLoading ? (
-            <ActivityIndicator style={{ padding: 20 }} size="large" color={colors.primary} />
-          ) : (
-            content
-          )}
-        </View>
-      </DismissKeyboard>
-    </SafeAreaView>
+  return (
+    <SidbarWrapper>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Header
+          left={
+            <TouchableOpacity onPress={onPress}>
+              <MenuIcon />
+            </TouchableOpacity>
+          }
+          title="Browse"
+        />
+        <DismissKeyboard>
+          <View style={styles.container} contentContainerStyle={styles.content}>
+            <View style={styles.header}>
+              <View style={styles.searchInput}>
+                <SearchInput value={inputValue} onChangeText={setInputValue} />
+              </View>
+            </View>
+            <View style={{ paddingHorizontal: 20, flexDirection: 'row' }}>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                {selections.map(({ name, isSelected }, index) => (
+                  <TouchableOpacity
+                    onPress={() => pressSelection(name)}
+                    key={`${index + 1}`}
+                    style={[
+                      styles.filterTextContainer,
+                      isSelected || { backgroundColor: colors.main },
+                    ]}
+                  >
+                    <Text style={[styles.filterText, isSelected && { color: colors.main }]}>
+                      {`${name.toString()}`}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            </View>
+            <View style={styles.sortOptions}>
+              <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
+                <ListIcon />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <GridIcon />
+              </TouchableOpacity>
+            </View>
+
+            {isLoading ? (
+              <ActivityIndicator style={{ padding: 20 }} size="large" color={colors.primary} />
+            ) : (
+              content
+            )}
+          </View>
+        </DismissKeyboard>
+      </SafeAreaView>
+    </SidbarWrapper>
   );
 }
 

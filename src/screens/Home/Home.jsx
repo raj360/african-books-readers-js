@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { ScrollView, View, Platform, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 import { CircleSnail } from 'react-native-progress';
-import { RNNDrawer, SideMenuView } from 'react-native-navigation-drawer-extension';
+import { RNNDrawer } from 'react-native-navigation-drawer-extension';
 import colors from 'themes/colors';
 import Header from 'components/Header';
 import MenuIcon from 'assets/icons/menu.svg';
 import HomeLogoIcon from 'assets/images/home-logo.svg';
 import Text from 'components/Text';
 import ChevronRight from 'assets/icons/chevron-right.svg';
+import SidbarWrapper from 'components/SidebarWrapper';
 import styles from './Home.styles';
 
 const ebooks = [
@@ -64,51 +65,12 @@ function Home({ route, componentId }) {
     RNNDrawer.showDrawer({
       component: {
         name: 'CustomDrawer',
-        passProps: {
-          animationOpenTime: 300,
-          animationCloseTime: 300,
-          direction: 'left',
-          dismissWhenTouchOutside: true,
-          fadeOpacity: 0.6,
-          drawerScreenWidth: '75%' || 445,
-          drawerScreenHeight: '100%' || 700,
-          parentComponentId: componentId,
-          style: {
-            backgroundColor: 'white',
-          },
-        },
-        options: {
-          layout: {
-            componentBackgroundColor: '#80FFFFFF.',
-          },
-        },
       },
     });
   };
 
   return (
-    <SideMenuView
-      style={{ flex: 1 }} // Styles the view
-      drawerName="CustomDrawer"
-      direction="left"
-      passProps={{
-        animationOpenTime: 300,
-        animationCloseTime: 300,
-        dismissWhenTouchOutside: true,
-        fadeOpacity: 0.6,
-        drawerScreenWidth: '75%' || 445,
-        drawerScreenHeight: '100%' || 700,
-        parentComponentId: componentId,
-        style: {
-          backgroundColor: 'white', // Styles the drawer container
-        },
-      }}
-      options={{
-        layout: {
-          componentBackgroundColor: 'transparent',
-        },
-      }}
-    >
+    <SidbarWrapper>
       <SafeAreaView style={{ flex: 1 }}>
         <Header
           left={
@@ -217,7 +179,7 @@ function Home({ route, componentId }) {
           {Platform.OS === 'ios' && <View style={styles.iosBottomScrollBackColor} />}
         </ScrollView>
       </SafeAreaView>
-    </SideMenuView>
+    </SidbarWrapper>
   );
 }
 

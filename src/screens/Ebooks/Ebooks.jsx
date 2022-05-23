@@ -19,6 +19,9 @@ import ChevronDown from 'assets/icons/chevron-down.svg';
 import GridIcon from 'assets/icons/grid.svg';
 import ListIcon from 'assets/icons/list.svg';
 
+import SidbarWrapper from 'components/SidebarWrapper';
+import { RNNDrawer } from 'react-native-navigation-drawer-extension';
+
 import styles from './Ebooks.styles';
 
 function Ebooks({ route, componentId }) {
@@ -153,57 +156,67 @@ function Ebooks({ route, componentId }) {
     }
   });
 
+  const onPress = () => {
+    RNNDrawer.showDrawer({
+      component: {
+        name: 'CustomDrawer',
+      },
+    });
+  };
+
   return (
-    <SafeAreaView>
-      <Header
-        left={
-          <TouchableOpacity>
-            <MenuIcon />
-          </TouchableOpacity>
-        }
-        right={
-          <TouchableOpacity>
-            <View style={styles.headerTextContainer}>
-              <Text style={styles.addText}>Add</Text>
-              <PlusIcon />
-            </View>
-          </TouchableOpacity>
-        }
-        title="My eBooks"
-      />
-
-      <View style={styles.sortLabel}>
-        <View
-          style={[styles.headerTextContainer, { justifyContent: 'flex-start', paddingLeft: 30 }]}
-        >
-          <Text style={styles.addText}>Sort By</Text>
-          <ChevronDown />
-        </View>
-
-        <View style={[styles.sortIcons]}>
-          <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
-            <ListIcon />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <GridIcon />
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View>
-        <FlatGrid
-          itemDimension={105}
-          data={items}
-          fixed
-          spacing={5}
-          renderItem={({ item }) => <ReviewItem {...item} />}
+    <SidbarWrapper>
+      <SafeAreaView>
+        <Header
+          left={
+            <TouchableOpacity onPress={onPress}>
+              <MenuIcon />
+            </TouchableOpacity>
+          }
+          right={
+            <TouchableOpacity>
+              <View style={styles.headerTextContainer}>
+                <Text style={styles.addText}>Add</Text>
+                <PlusIcon />
+              </View>
+            </TouchableOpacity>
+          }
+          title="My eBooks"
         />
-      </View>
 
-      <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-        {Platform.OS === 'ios' && <View style={styles.iosBottomScrollBackColor} />}
-      </ScrollView>
-    </SafeAreaView>
+        <View style={styles.sortLabel}>
+          <View
+            style={[styles.headerTextContainer, { justifyContent: 'flex-start', paddingLeft: 30 }]}
+          >
+            <Text style={styles.addText}>Sort By</Text>
+            <ChevronDown />
+          </View>
+
+          <View style={[styles.sortIcons]}>
+            <TouchableOpacity style={{ paddingTop: 5, paddingRight: 5 }}>
+              <ListIcon />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <GridIcon />
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <View>
+          <FlatGrid
+            itemDimension={105}
+            data={items}
+            fixed
+            spacing={5}
+            renderItem={({ item }) => <ReviewItem {...item} />}
+          />
+        </View>
+
+        <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+          {Platform.OS === 'ios' && <View style={styles.iosBottomScrollBackColor} />}
+        </ScrollView>
+      </SafeAreaView>
+    </SidbarWrapper>
   );
 }
 

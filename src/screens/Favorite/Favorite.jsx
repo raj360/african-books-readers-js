@@ -12,6 +12,10 @@ import ChevronDown from 'assets/icons/chevron-down.svg';
 import colors from 'themes/colors';
 import Text from 'components/Text';
 import useInterval from 'helpers/useInterval';
+
+import SidbarWrapper from 'components/SidebarWrapper';
+import { RNNDrawer } from 'react-native-navigation-drawer-extension';
+
 import styles from './Favorite.styles';
 
 function Favorite() {
@@ -86,47 +90,57 @@ function Favorite() {
     }
   }, [inputValue, items]);
 
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Header
-        left={
-          <TouchableOpacity>
-            <MenuIcon />
-          </TouchableOpacity>
-        }
-        title="My Favorite"
-      />
-      <View style={styles.sortLabel}>
-        <View
-          style={[styles.headerTextContainer, { justifyContent: 'flex-start', paddingLeft: 30 }]}
-        >
-          <Text style={styles.text}>Sort By</Text>
-          <ChevronDown />
-        </View>
+  const onPress = () => {
+    RNNDrawer.showDrawer({
+      component: {
+        name: 'CustomDrawer',
+      },
+    });
+  };
 
-        <View style={[styles.sortIcons]}>
-          <TouchableOpacity style={styles.iconFeel}>
-            <ListIcon />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <GridIcon />
-          </TouchableOpacity>
+  return (
+    <SidbarWrapper>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Header
+          left={
+            <TouchableOpacity onPress={onPress}>
+              <MenuIcon />
+            </TouchableOpacity>
+          }
+          title="My Favorite"
+        />
+        <View style={styles.sortLabel}>
+          <View
+            style={[styles.headerTextContainer, { justifyContent: 'flex-start', paddingLeft: 30 }]}
+          >
+            <Text style={styles.text}>Sort By</Text>
+            <ChevronDown />
+          </View>
+
+          <View style={[styles.sortIcons]}>
+            <TouchableOpacity style={styles.iconFeel}>
+              <ListIcon />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <GridIcon />
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-      <View style={styles.container} contentContainerStyle={styles.content}>
-        {isLoading ? (
-          <ActivityIndicator style={{ padding: 20 }} size="large" color={colors.primary} />
-        ) : (
-          <FlatGrid
-            itemDimension={105}
-            data={items}
-            fixed
-            spacing={5}
-            renderItem={({ item }) => <ReviewItem {...item} />}
-          />
-        )}
-      </View>
-    </SafeAreaView>
+        <View style={styles.container} contentContainerStyle={styles.content}>
+          {isLoading ? (
+            <ActivityIndicator style={{ padding: 20 }} size="large" color={colors.primary} />
+          ) : (
+            <FlatGrid
+              itemDimension={105}
+              data={items}
+              fixed
+              spacing={5}
+              renderItem={({ item }) => <ReviewItem {...item} />}
+            />
+          )}
+        </View>
+      </SafeAreaView>
+    </SidbarWrapper>
   );
 }
 
