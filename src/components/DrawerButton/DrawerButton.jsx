@@ -7,7 +7,6 @@ import styles from './DrawerButton.styles';
 
 const DrawerButton = ({ name, component, parentComponentId, icon, routes, isRoute }) => {
   const onDrawerItemPressed = useCallback((name, param) => {
-    console.log({ name, param });
     RNNDrawer.dismissDrawer();
     navigate({ name, param });
   }, []);

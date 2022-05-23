@@ -8,7 +8,6 @@ import MenuIcon from 'assets/icons/menu.svg';
 import HomeLogoIcon from 'assets/images/home-logo.svg';
 import Text from 'components/Text';
 import ChevronRight from 'assets/icons/chevron-right.svg';
-import fonts from 'themes/fonts';
 import styles from './Home.styles';
 
 const ebooks = [
