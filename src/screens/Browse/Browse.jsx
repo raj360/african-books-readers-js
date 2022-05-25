@@ -27,8 +27,6 @@ function Browse(props) {
     { name: 'By Language', isSelected: false },
   ]);
 
-  console.log({ props });
-
   const [items, setItems] = React.useState([
     {
       author: 'Jennifer Nansubuga',
