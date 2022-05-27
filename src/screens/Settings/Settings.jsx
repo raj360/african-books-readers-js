@@ -10,7 +10,7 @@ const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const Settings = ({ parentComponentId }) => {
   return (
     <SafeAreaView>
-      <View style={{ height: SCREEN_HEIGHT, backgroundColor: colors.lightGray }}>
+      <View style={{ height: SCREEN_HEIGHT, backgroundColor: colors.main }}>
         <View style={styles.drawerHeader}>
           <View style={styles.wrapper}>
             <Image style={styles.image} source={require('assets/images/presignup-one.png')} />
@@ -20,31 +20,25 @@ const Settings = ({ parentComponentId }) => {
         </View>
 
         <View style={styles.container}>
-          <>
-            <View style={styles.buttonContainer}>
-              <Text style={styles.subText}>Testing what is required</Text>
-            </View>
-          </>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.subText}>About African books.com</Text>
+          </View>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.subText}>Preferences</Text>
+          </View>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.subText}>Order history</Text>
+          </View>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.subText}>About African books.com</Text>
+          </View>
         </View>
-        {/* {Buttons.map((button) => {
-          return (
-            <DrawerButton
-              key={button.id}
-              component={button.component}
-              name={button.name}
-              parentComponentId={parentComponentId}
-              icon={button.icon}
-              routes={button.routes}
-              isRoute={button.isRoute}
-            />
-          );
-        })} */}
         <View style={styles.logoutView}>
           <View style={styles.icon}>
             <LogOutIcon />
           </View>
           <TouchableOpacity>
-            <Text style={styles.logout}>Logout</Text>
+            <Text style={styles.logout}>Signout</Text>
           </TouchableOpacity>
         </View>
       </View>
