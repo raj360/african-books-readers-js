@@ -13,6 +13,7 @@ import Browse from 'screens/Browse';
 import Ebooks from 'screens/Ebooks';
 import Audio from 'screens/Audio';
 import Favorite from 'screens/Favorite';
+import Settings from 'screens/Settings';
 
 import colors from 'themes/colors';
 import commonStyles from 'themes/commonStyles';
@@ -98,6 +99,20 @@ function AudioScreens() {
       }}
     >
       <AccountStack.Screen name="Audio" component={Audio} />
+    </AccountStack.Navigator>
+  );
+}
+function SettingsScreens() {
+  return (
+    <AccountStack.Navigator
+      headerMode="none"
+      screenOptions={{
+        cardStyle: {
+          backgroundColor: colors.main,
+        },
+      }}
+    >
+      <AccountStack.Screen name="Settings" component={Audio} />
     </AccountStack.Navigator>
   );
 }
