@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { SafeAreaView, View, Image, Dimensions, TouchableOpacity } from 'react-native';
 import LogOutIcon from 'assets/icons/log-out.svg';
 import Text from 'components/Text';
 import colors from 'themes/colors';
+import Header from 'components/Header';
+import { useNavigation } from '@react-navigation/native';
+import BackArrowIcon from 'assets/icons/chevron-left.svg';
 import styles from './Settings.styles';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 const Settings = ({ parentComponentId }) => {
+  const navigation = useNavigation();
+  const onBackPress = useCallback(() => {
+    navigation.goBack();
+  }, [navigation]);
   return (
     <SafeAreaView>
+      <Header
+        title="Settings"
+        left={
+          <TouchableOpacity
+            style={{ padding: 10, paddingLeft: 0 }}
+            activeOpacity={0.7}
+            onPress={onBackPress}
+          >
+            <BackArrowIcon fill="#fff" />
+          </TouchableOpacity>
+        }
+      />
       <View style={{ height: SCREEN_HEIGHT, backgroundColor: colors.main }}>
         <View style={styles.drawerHeader}>
           <View style={styles.wrapper}>
