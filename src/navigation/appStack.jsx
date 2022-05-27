@@ -102,20 +102,6 @@ function AudioScreens() {
     </AccountStack.Navigator>
   );
 }
-function SettingsScreens() {
-  return (
-    <AccountStack.Navigator
-      headerMode="none"
-      screenOptions={{
-        cardStyle: {
-          backgroundColor: colors.main,
-        },
-      }}
-    >
-      <AccountStack.Screen name="Settings" component={Audio} />
-    </AccountStack.Navigator>
-  );
-}
 
 function Tabs({ componentId }) {
   return (
@@ -204,8 +190,7 @@ function AppScreens({ componentId }) {
       {/* <TABS /> */}
 
       {/* Screens without tabs */}
-
-      {/* <AppStack.Screen name="SubscriptionPaymentEdit" component={SubscriptionPaymentEdit} /> */}
+      <AccountStack.Screen name="Settings" component={Settings} />
     </AppStack.Navigator>
   );
 }
