@@ -13,6 +13,7 @@ import Browse from 'screens/Browse';
 import Ebooks from 'screens/Ebooks';
 import Audio from 'screens/Audio';
 import Favorite from 'screens/Favorite';
+import Settings from 'screens/Settings';
 
 import colors from 'themes/colors';
 import commonStyles from 'themes/commonStyles';
@@ -189,8 +190,7 @@ function AppScreens({ componentId }) {
       {/* <TABS /> */}
 
       {/* Screens without tabs */}
-
-      {/* <AppStack.Screen name="SubscriptionPaymentEdit" component={SubscriptionPaymentEdit} /> */}
+      <AccountStack.Screen name="Settings" component={Settings} />
     </AppStack.Navigator>
   );
 }
